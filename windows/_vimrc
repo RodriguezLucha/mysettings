@@ -1,0 +1,165 @@
+"Start up pathogen for Vundle
+execute pathogen#infect()
+
+"Start up Vundle to install other plugins
+set nocompatible
+filetype off
+set rtp+=$HOME/vimfiles/bundle/Vundle.vim/
+call vundle#begin('$HOME/vimfiles/bundle/')
+
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'bling/vim-airline'
+Plugin 'tpope/vim-surround'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'easymotion/vim-easymotion'
+Plugin 'ervandew/supertab'
+Plugin 'tpope/vim-endwise'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'raimondi/delimitmate'
+Plugin 'kien/ctrlp.vim'
+Plugin 'dkprice/vim-easygrep'
+Plugin 'mattesgroeger/vim-bookmarks'
+Plugin 'mhinz/vim-startify'
+Plugin 'thinca/vim-fontzoom'
+Plugin 'mru.vim'
+Plugin 'miyakogi/conoline.vim'
+Plugin 'taku-o/vim-esc2-noh'
+Plugin 'roman/golden-ratio'
+Plugin 'valloric/listtoggle'
+Plugin 'peterrincker/vim-argumentative'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-fugitive'
+
+
+call vundle#end() 
+filetype plugin indent on 
+
+source $VIMRUNTIME/vimrc_example.vim
+source $VIMRUNTIME/mswin.vim
+behave mswin
+
+"TODO Figure out what this is, I don't think its necessary
+set diffexpr=MyDiff()
+function MyDiff()
+  let opt = '-a --binary '
+  if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
+  if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
+  let arg1 = v:fname_in
+  if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
+  let arg2 = v:fname_new
+  if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
+  let arg3 = v:fname_out
+  if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
+  if $VIMRUNTIME =~ ' '
+    if &sh =~ '\<cmd'
+      if empty(&shellxquote)
+        let l:shxq_sav = ''
+        set shellxquote&
+      endif
+      let cmd = '"' . $VIMRUNTIME . '\diff"'
+    else
+      let cmd = substitute($VIMRUNTIME, ' ', '" ', '') . '\diff"'
+    endif
+  else
+    let cmd = $VIMRUNTIME . '\diff'
+  endif
+  silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3
+  if exists('l:shxq_sav')
+    let &shellxquote=l:shxq_sav
+  endif
+endfunction
+
+set guifont=Consolas:h20:cANSI
+set noeb vb t_vb=
+set number
+set nowrap
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set tw=0
+set expandtab
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+
+"Windows specific, make windows start fullscreen
+au GUIEnter * simalt ~x
+set dir=C:\Windows\Temp\vim\dir\
+set backupdir=C:\Windows\Temp\vim\backup\
+set undodir=C:\Windows\Temp\vim\undo\
+
+"Set space as leader key
+let mapleader = "\<Space>"
+
+"Bookmarks
+let g:bookmark_sign = '-'
+let g:bookmark_annotation_sign = '='
+
+"Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+syntax enable
+
+"Color
+if has('gui_running')
+    set background=dark
+	colorscheme solarized
+endif
+
+"Easy grep settings 
+set grepprg=ag
+let g:EasyGrepCommand=1
+let g:EasyGrepJumpToMatch=0
+let g:EasyGrepSearchCurrentBufferDir=0
+
+"Need to set this for airline
+set laststatus=2
+let g:airline_section_b = '%{getcwd()}'
+let g:airline_section_c = '%t'
+
+" CDC = Change to Directory of Current file
+command CDC cd %:p:h
+
+"Quick format source
+com! FormatXML %!xmllint --format -
+com! FormatJSON %!python -m json.tool
+
+"Folding automatically
+set foldmethod=indent
+set foldlevel=3
+
+"Quick save
+nnoremap <leader>s :update<CR>
+nnoremap <leader>e :quit<CR>
+
+"NERDTree stuff
+nnoremap <Leader>t :NERDTreeToggle<Enter>
+let g:NERDTreeChDirMode=1
+let NERDTreeQuitOnOpen = 1
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
+let NERDTreeShowLineNumbers = 1
+let NERDTreeShowBookmarks = 1
+
+"Toggle quickfix windows
+let g:lt_quickfix_list_toggle_map = '<leader>q'
+let g:lt_location_list_toggle_map = '<leader>w'
+
+"Move splits quickly
+nnoremap <leader>k :wincmd k<CR>
+nnoremap <leader>j :wincmd j<CR>
+nnoremap <leader>h :wincmd h<CR>
+nnoremap <leader>l :wincmd l<CR>
+
+"Bookmark broken with CtrlP Integration currently
+let g:bookmark_disable_ctrlp = 1
+
+nnoremap <Leader>f :Grep<Space>
+
