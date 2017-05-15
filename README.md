@@ -10,4 +10,4 @@ This README would normally document whatever steps are necessary to get your app
 
 ### Linux ###
 
-* <pre>ln -s vimsettings/linux/.vimrc .vimrc</pre>
+* 	ln -s vimsettings/linux/.vimrc .vimrc
