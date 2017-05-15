@@ -1,13 +1,7 @@
-# README #
-
-This README would normally document whatever steps are necessary to get your application up and running.
-
-### What is this repository for? ###
-
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
-
 ### Linux ###
 
-* 	ln -s vimsettings/linux/.vimrc .vimrc
+* `ln -s vimsettings/linux/.vimrc .vimrc`
+
+### Windows ###
+
+* `mklink _vimrc vimsettings\windows\_vimrc`
