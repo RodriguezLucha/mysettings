@@ -5,7 +5,7 @@
 * `chmod 600 id_rsa`
 * `ln -s vimsettings/linux/.vimrc .vimrc`
 
-Under account
+# Under account
 * `ln -s /home/rudy/vimsettings/linux/.vimrc .vimrc`
 * `ln -s /home/rudy/.vim .vim`
 
