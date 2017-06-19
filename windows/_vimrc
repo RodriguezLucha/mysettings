@@ -166,6 +166,7 @@ nnoremap <Leader>f :Grep<Space>
 
 "Most Recently Accessed Files Shortcut
 nnoremap <leader>o :MRU<CR>
+nnoremap <leader>c :CDC<CR>
 
 "Window resize magic
 call submode#enter_with('grow/shrink', 'n', '', '<leader><up>', '<C-w>+')
