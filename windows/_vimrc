@@ -72,7 +72,7 @@ function MyDiff()
   endif
 endfunction
 
-set guifont=Consolas:h20:cANSI
+set guifont=Consolas:h14:cANSI
 set noeb vb t_vb=
 set number
 set nowrap
@@ -162,3 +162,5 @@ let g:bookmark_disable_ctrlp = 1
 
 nnoremap <Leader>f :Grep<Space>
 
+"Most Recently Accessed Files Shortcut
+nnoremap <leader>o :MRU<CR>
