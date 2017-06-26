@@ -1,8 +1,12 @@
+"Linux Vimrc
 set nocompatible
 filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+
+
+
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
@@ -20,16 +24,17 @@ Plugin 'raimondi/delimitmate'
 Plugin 'kien/ctrlp.vim'
 Plugin 'dkprice/vim-easygrep'
 Plugin 'mattesgroeger/vim-bookmarks'
-Plugin 'mhinz/vim-startify'
 Plugin 'thinca/vim-fontzoom'
 Plugin 'mru.vim'
 Plugin 'miyakogi/conoline.vim'
 Plugin 'taku-o/vim-esc2-noh'
-Plugin 'roman/golden-ratio'
 Plugin 'valloric/listtoggle'
 Plugin 'peterrincker/vim-argumentative'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-fugitive'
+Plugin 'kana/vim-submode'
+Plugin 'majutsushi/tagbar'
+Plugin 'ludovicchabant/vim-gutentags'
 
 call vundle#end()
 filetype plugin indent on    " required
@@ -54,6 +59,11 @@ let mapleader = "\<Space>"
 let g:bookmark_sign = '-'
 let g:bookmark_annotation_sign = '='
 
+"Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
 syntax enable
 
 "Easy grep settings 
@@ -66,6 +76,7 @@ let g:EasyGrepSearchCurrentBufferDir=0
 set laststatus=2
 let g:airline_section_b = '%{getcwd()}'
 let g:airline_section_c = '%t'
+let g:airline#extensions#tabline#enabled = 1
 
 "CDC = Change to Directory of Current file
 command CDC cd %:p:h
@@ -85,7 +96,7 @@ nnoremap <leader>e :quit<CR>
 "NERDTree stuff
 nnoremap <Leader>t :NERDTreeToggle<Enter>
 let g:NERDTreeChDirMode=1
-let NERDTreeQuitOnOpen = 1
+"let NERDTreeQuitOnOpen = 1
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 let NERDTreeShowLineNumbers = 1
@@ -106,3 +117,19 @@ let g:bookmark_disable_ctrlp = 1
 
 nnoremap <Leader>f :Grep<Space>
 
+"Most Recently Accessed Files Shortcut
+nnoremap <leader>o :MRU<CR>
+nnoremap <leader>c :CDC<CR>
+
+"Window resize magic
+call submode#enter_with('grow/shrink', 'n', '', '<leader><up>', '<C-w>+')
+call submode#enter_with('grow/shrink', 'n', '', '<leader><down>', '<C-w>-')
+call submode#enter_with('grow/shrink', 'n', '', '<leader><Left>', '<C-w><lt>')
+call submode#enter_with('grow/shrink', 'n', '', '<leader><Right>', '<C-w>>')
+call submode#map('grow/shrink', 'n', '', '<up>', '<C-w>+')
+call submode#map('grow/shrink', 'n', '', '<down>', '<C-w>-')
+call submode#map('grow/shrink', 'n', '', '<Left>', '<C-w><lt>')
+call submode#map('grow/shrink', 'n', '', '<Right>', '<C-w>>')
+
+"Tagbar stuff
+nnoremap <Leader>y :TagbarToggle<CR>
