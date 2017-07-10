@@ -74,7 +74,9 @@ function MyDiff()
   endif
 endfunction
 
-set guifont=Consolas:h14:cANSI
+set encoding=utf-8
+set guifont=DejaVu_Sans_Mono_for_Powerline:h14:cANSI:qDRAFT
+set rop=type:directx
 set noeb vb t_vb=
 set number
 set nowrap
