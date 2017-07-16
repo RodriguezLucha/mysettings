@@ -5,9 +5,6 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-
-
-
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
@@ -32,9 +29,9 @@ Plugin 'valloric/listtoggle'
 Plugin 'peterrincker/vim-argumentative'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-fugitive'
-Plugin 'kana/vim-submode'
 Plugin 'majutsushi/tagbar'
 Plugin 'ludovicchabant/vim-gutentags'
+Plugin 'breuckelen/vim-resize'
 
 call vundle#end()
 filetype plugin indent on    " required
@@ -47,10 +44,13 @@ set shiftwidth=4
 set softtabstop=4
 set tw=0
 set expandtab
-map <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
+
+"Resize windows quickly
+let g:vim_resize_disable_auto_mappings = 1
+map <up> :CmdResizeUp<cr>
+map <down> :CmdResizeDown<cr>
+map <left> :CmdResizeLeft<cr>
+map <right> :CmdResizeRight<cr>
 
 "Set space as leader key
 let mapleader = "\<Space>"
@@ -120,16 +120,6 @@ nnoremap <Leader>f :Grep<Space>
 "Most Recently Accessed Files Shortcut
 nnoremap <leader>o :MRU<CR>
 nnoremap <leader>c :CDC<CR>
-
-"Window resize magic
-call submode#enter_with('grow/shrink', 'n', '', '<leader><up>', '<C-w>+')
-call submode#enter_with('grow/shrink', 'n', '', '<leader><down>', '<C-w>-')
-call submode#enter_with('grow/shrink', 'n', '', '<leader><Left>', '<C-w><lt>')
-call submode#enter_with('grow/shrink', 'n', '', '<leader><Right>', '<C-w>>')
-call submode#map('grow/shrink', 'n', '', '<up>', '<C-w>+')
-call submode#map('grow/shrink', 'n', '', '<down>', '<C-w>-')
-call submode#map('grow/shrink', 'n', '', '<Left>', '<C-w><lt>')
-call submode#map('grow/shrink', 'n', '', '<Right>', '<C-w>>')
 
 "Tagbar stuff
 nnoremap <Leader>y :TagbarToggle<CR>
