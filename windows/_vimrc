@@ -171,7 +171,6 @@ nnoremap <leader>b :sp<CR>
 let g:bookmark_disable_ctrlp = 1
 let g:ctrlp_cmd = 'CtrlPBuffer'
 
-
 nnoremap <Leader>f :Grep<Space>
 
 "Most Recently Accessed Files Shortcut
