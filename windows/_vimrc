@@ -93,6 +93,10 @@ map <down> :CmdResizeDown<cr>
 map <left> :CmdResizeLeft<cr>
 map <right> :CmdResizeRight<cr>
 
+"Easy scrolling
+noremap <C-left> zh
+noremap <C-right> zl
+
 "Windows specific, make windows start fullscreen
 au GUIEnter * simalt ~x
 set dir=C:\Windows\Temp\vim\dir\
@@ -130,6 +134,7 @@ set laststatus=2
 let g:airline_section_b = '%{getcwd()}'
 let g:airline_section_c = '%t'
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail'
 
 " CDC = Change to Directory of Current file
 command CDC cd %:p:h
