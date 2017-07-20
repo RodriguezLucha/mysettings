@@ -52,6 +52,10 @@ map <down> :CmdResizeDown<cr>
 map <left> :CmdResizeLeft<cr>
 map <right> :CmdResizeRight<cr>
 
+"Easy scrolling
+noremap <C-left> zh
+noremap <C-right> zl
+
 "Set space as leader key
 let mapleader = "\<Space>"
 
