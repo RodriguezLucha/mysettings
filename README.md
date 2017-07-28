@@ -14,3 +14,4 @@
 
 * `mklink _vimrc vimsettings\windows\_vimrc`
 * `mklink /D C:\Scripts "C:\Program Files (x86)\Vim\vimsettings\windows\aliases\"`
+* `mklink "%userprofile%\.gitconfig" "C:\Program Files (x86)\Vim\vimsettings\windows\.gitconfig"`
