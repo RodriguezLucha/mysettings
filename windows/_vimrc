@@ -35,6 +35,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'majutsushi/tagbar'
 Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'breuckelen/vim-resize'
+Plugin 'maxbrunsfeld/vim-yankstack'
 
 call vundle#end() 
 filetype plugin indent on 
@@ -96,6 +97,7 @@ map <right> :CmdResizeRight<cr>
 "Easy scrolling
 noremap <C-left> zh
 noremap <C-right> zl
+nnoremap <silent> ss :update<cr>
 
 "Windows specific, make windows start fullscreen
 au GUIEnter * simalt ~x
@@ -184,3 +186,8 @@ nnoremap <leader>c :CDC<CR>
 
 "Tagbar stuff
 nnoremap <Leader>y :TagbarToggle<CR>
+
+"Yankstack
+nmap <leader>p <Plug>yankstack_substitute_older_paste
+nmap <leader>; <Plug>yankstack_substitute_newer_paste
+let g:yankstack_map_keys = 0
