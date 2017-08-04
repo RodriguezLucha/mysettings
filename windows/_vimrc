@@ -119,11 +119,13 @@ set statusline+=%*
 
 syntax enable
 
-"Color
-if has('gui_running')
-    set background=dark
-	colorscheme solarized
-endif
+set background=dark
+let g:solarized_underline=0
+let g:solarized_italic=0
+let g:solarized_bold=0
+
+colorscheme solarized
+
 
 "Easy grep settings 
 set grepprg=ag
@@ -137,6 +139,7 @@ let g:airline_section_b = '%{getcwd()}'
 let g:airline_section_c = '%t'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
+let g:airline_powerline_fonts = 1
 
 " CDC = Change to Directory of Current file
 command CDC cd %:p:h
@@ -191,3 +194,14 @@ nnoremap <Leader>y :TagbarToggle<CR>
 nmap <leader>p <Plug>yankstack_substitute_older_paste
 nmap <leader>; <Plug>yankstack_substitute_newer_paste
 let g:yankstack_map_keys = 0
+"let timer = timer_start(2000, 'SaveFile',{'repeat':-1}) 
+func! SaveFile(timer)   
+    silent! :e!  
+endfunc
+
+hi Visual ctermfg=0 ctermbg=11
+
+let g:conoline_color_normal_dark = 'ctermbg=0'
+let g:conoline_color_normal_nr_dark = 'ctermbg=8'
+let g:conoline_color_insert_dark = 'ctermbg=0'
+let g:conoline_color_insert_nr_dark = 'ctermbg=8'
