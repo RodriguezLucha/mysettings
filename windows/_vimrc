@@ -12,7 +12,8 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline' 
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'easymotion/vim-easymotion'
@@ -135,11 +136,11 @@ let g:EasyGrepSearchCurrentBufferDir=0
 
 "Need to set this for airline
 set laststatus=2
+let g:airline_powerline_fonts = 1
 let g:airline_section_b = '%{getcwd()}'
 let g:airline_section_c = '%t'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
-let g:airline_powerline_fonts = 1
 
 " CDC = Change to Directory of Current file
 command CDC cd %:p:h
@@ -199,6 +200,7 @@ func! SaveFile(timer)
     silent! :e!  
 endfunc
 
+let g:airline_theme='wombat'
 hi Visual ctermfg=0 ctermbg=11
 
 let g:conoline_color_normal_dark = 'ctermbg=0'
