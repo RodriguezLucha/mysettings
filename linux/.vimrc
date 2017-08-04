@@ -9,7 +9,8 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline' 
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'easymotion/vim-easymotion'
@@ -69,6 +70,11 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 syntax enable
+
+set background=dark
+let g:solarized_underline=0
+let g:solarized_italic=0
+let g:solarized_bold=0
 
 "Easy grep settings 
 set grepprg=ag
@@ -130,3 +136,11 @@ nnoremap <leader>c :CDC<CR>
 
 "Tagbar stuff
 nnoremap <Leader>y :TagbarToggle<CR>
+
+let g:airline_theme='wombat'
+hi Visual ctermfg=0 ctermbg=11
+
+let g:conoline_color_normal_dark = 'ctermbg=0'
+let g:conoline_color_normal_nr_dark = 'ctermbg=8'
+let g:conoline_color_insert_dark = 'ctermbg=0'
+let g:conoline_color_insert_nr_dark = 'ctermbg=8'
