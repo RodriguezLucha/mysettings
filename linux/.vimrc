@@ -33,6 +33,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'majutsushi/tagbar'
 Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'breuckelen/vim-resize'
+Plugin 'maxbrunsfeld/vim-yankstack'
 
 call vundle#end()
 filetype plugin indent on    " required
@@ -69,9 +70,26 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-syntax enable
+if !empty($CONEMUBUILD)
+    set termencoding=utf8
+    set term=xterm
+    set t_Co=256
+    let &t_AB="\e[48;5;%dm"
+    let &t_AF="\e[38;5;%dm"
+    " termcap codes for cursor shape changes on entry and exit to
+    " /from insert mode
+    " doesn't work
+    "let &t_ti="\e[1 q"
+    "let &t_SI="\e[5 q"
+    "let &t_EI="\e[1 q"
+    "let &t_te="\e[0 q"
+endif
 
-set background=dark
+syntax enable 
+set background=dark 
+colorscheme solarized
+
+au GUIEnter * simalt ~x
 let g:solarized_underline=0
 let g:solarized_italic=0
 let g:solarized_bold=0
@@ -84,11 +102,16 @@ let g:EasyGrepSearchCurrentBufferDir=0
 
 "Need to set this for airline
 set laststatus=2
+let g:airline_powerline_fonts = 1
 let g:airline_section_b = '%{getcwd()}'
 let g:airline_section_c = '%t'
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail'
 
-"CDC = Change to Directory of Current file
+let g:airline_theme='solarized'
+let g:airline_solarized_bg='dark'
+
+" CDC = Change to Directory of Current file
 command CDC cd %:p:h
 
 "Quick format source
@@ -106,7 +129,6 @@ nnoremap <leader>e :quit<CR>
 "NERDTree stuff
 nnoremap <Leader>t :NERDTreeToggle<Enter>
 let g:NERDTreeChDirMode=1
-"let NERDTreeQuitOnOpen = 1
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 let NERDTreeShowLineNumbers = 1
@@ -137,7 +159,15 @@ nnoremap <leader>c :CDC<CR>
 "Tagbar stuff
 nnoremap <Leader>y :TagbarToggle<CR>
 
-let g:airline_theme='wombat'
+"Yankstack
+nmap <C-up> <Plug>yankstack_substitute_older_paste
+nmap <C-down> <Plug>yankstack_substitute_newer_paste
+let g:yankstack_map_keys = 0
+"let timer = timer_start(2000, 'SaveFile',{'repeat':-1}) 
+func! SaveFile(timer)   
+    silent! :e!  
+endfunc
+
 hi Visual ctermfg=0 ctermbg=11
 
 let g:conoline_color_normal_dark = 'ctermbg=0'

@@ -99,7 +99,6 @@ map <right> :CmdResizeRight<cr>
 "Easy scrolling
 noremap <C-left> zh
 noremap <C-right> zl
-nnoremap <silent> ss :update<cr>
 
 "Windows specific, make windows start fullscreen
 set dir=C:\Windows\Temp\vim\dir\
@@ -117,8 +116,6 @@ let g:bookmark_annotation_sign = '='
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-
-syntax enable
 
 
 if !empty($CONEMUBUILD)
@@ -180,7 +177,6 @@ nnoremap <leader>e :quit<CR>
 "NERDTree stuff
 nnoremap <Leader>t :NERDTreeToggle<Enter>
 let g:NERDTreeChDirMode=1
-"let NERDTreeQuitOnOpen = 1
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 let NERDTreeShowLineNumbers = 1
@@ -212,8 +208,8 @@ nnoremap <leader>c :CDC<CR>
 nnoremap <Leader>y :TagbarToggle<CR>
 
 "Yankstack
-nmap <leader>p <Plug>yankstack_substitute_older_paste
-nmap <leader>; <Plug>yankstack_substitute_newer_paste
+nmap <C-up> <Plug>yankstack_substitute_older_paste
+nmap <C-down> <Plug>yankstack_substitute_newer_paste
 let g:yankstack_map_keys = 0
 "let timer = timer_start(2000, 'SaveFile',{'repeat':-1}) 
 func! SaveFile(timer)   
