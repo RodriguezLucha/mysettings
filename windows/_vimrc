@@ -1,5 +1,6 @@
 "Windows Vimrc 
 "Start up pathogen for Vundle
+
 execute pathogen#infect()
 
 "Start up Vundle to install other plugins
@@ -101,7 +102,6 @@ noremap <C-right> zl
 nnoremap <silent> ss :update<cr>
 
 "Windows specific, make windows start fullscreen
-au GUIEnter * simalt ~x
 set dir=C:\Windows\Temp\vim\dir\
 set backupdir=C:\Windows\Temp\vim\backup\
 set undodir=C:\Windows\Temp\vim\undo\
@@ -120,13 +120,30 @@ set statusline+=%*
 
 syntax enable
 
-set background=dark
+
+if !empty($CONEMUBUILD)
+    set termencoding=utf8
+    set term=xterm
+    set t_Co=256
+    let &t_AB="\e[48;5;%dm"
+    let &t_AF="\e[38;5;%dm"
+    " termcap codes for cursor shape changes on entry and exit to
+    " /from insert mode
+    " doesn't work
+    "let &t_ti="\e[1 q"
+    "let &t_SI="\e[5 q"
+    "let &t_EI="\e[1 q"
+    "let &t_te="\e[0 q"
+endif
+
+syntax enable 
+set background=dark 
+colorscheme solarized
+
+au GUIEnter * simalt ~x
 let g:solarized_underline=0
 let g:solarized_italic=0
 let g:solarized_bold=0
-
-colorscheme solarized
-
 
 "Easy grep settings 
 set grepprg=ag
@@ -141,6 +158,9 @@ let g:airline_section_b = '%{getcwd()}'
 let g:airline_section_c = '%t'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
+
+let g:airline_theme='solarized'
+let g:airline_solarized_bg='dark'
 
 " CDC = Change to Directory of Current file
 command CDC cd %:p:h
@@ -200,7 +220,6 @@ func! SaveFile(timer)
     silent! :e!  
 endfunc
 
-let g:airline_theme='wombat'
 hi Visual ctermfg=0 ctermbg=11
 
 let g:conoline_color_normal_dark = 'ctermbg=0'
