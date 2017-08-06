@@ -1,7 +1,8 @@
 "Linux Vimrc
 set nocompatible
 filetype off
-
+"TODO: What
+"
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -70,29 +71,13 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-if !empty($CONEMUBUILD)
-    set termencoding=utf8
-    set term=xterm
-    set t_Co=256
-    let &t_AB="\e[48;5;%dm"
-    let &t_AF="\e[38;5;%dm"
-    " termcap codes for cursor shape changes on entry and exit to
-    " /from insert mode
-    " doesn't work
-    "let &t_ti="\e[1 q"
-    "let &t_SI="\e[5 q"
-    "let &t_EI="\e[1 q"
-    "let &t_te="\e[0 q"
-endif
-
 syntax enable 
+set termencoding=utf8
+set term=xterm
+set t_Co=256
+
 set background=dark 
 colorscheme solarized
-
-au GUIEnter * simalt ~x
-let g:solarized_underline=0
-let g:solarized_italic=0
-let g:solarized_bold=0
 
 "Easy grep settings 
 set grepprg=ag
@@ -168,9 +153,3 @@ func! SaveFile(timer)
     silent! :e!  
 endfunc
 
-hi Visual ctermfg=0 ctermbg=11
-
-let g:conoline_color_normal_dark = 'ctermbg=0'
-let g:conoline_color_normal_nr_dark = 'ctermbg=8'
-let g:conoline_color_insert_dark = 'ctermbg=0'
-let g:conoline_color_insert_nr_dark = 'ctermbg=8'
