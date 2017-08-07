@@ -235,4 +235,5 @@ endfunc
 func! Refresh_helper(timer)   
     silent! :e!  
 endfunc
+nnoremap <silent> ss :call Refresh()<CR>
 
