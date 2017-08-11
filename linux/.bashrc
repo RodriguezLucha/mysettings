@@ -7,6 +7,7 @@ fi
 
 # User specific aliases and functions
 export EDITOR=vim
+export TERM=xterm-256color
 alias cls="clear"
 alias cd..="cd .."
 alias l="ls -A --color --classify"
