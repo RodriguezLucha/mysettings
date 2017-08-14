@@ -10,6 +10,7 @@ export EDITOR=vim
 export TERM=xterm-256color
 alias cls="clear"
 alias cd..="cd .."
+alias e="exit"
 alias l="ls -A --color --classify"
 alias dev="sudo su -m dev"
 alias root="sudo su -m root"
