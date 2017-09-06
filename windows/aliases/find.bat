@@ -1,2 +1,2 @@
-@echo off 
-"C:\cygwin64\bin\find.exe" %*
+@echo off
+C:\sdks\gitsdk\usr\bin\find.exe %*
