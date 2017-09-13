@@ -230,4 +230,5 @@ func! Refresh_helper(timer)
     silent! :e!  
 endfunc
 nnoremap <silent> ss :call Refresh()<CR>
-
+"9
+nnoremap <Leader>7 :let [&nu, &rnu] = [!&rnu, &nu+&rnu==1]<CR>nu
