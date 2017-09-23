@@ -12,6 +12,9 @@ cd /D "C:\Program Files (x86)\Vim"
 IF [%1]==[~] (
 cd /D "%USERPROFILE%\Desktop"
 )
+IF [%1]==[/] (
+cd /D "C:\"
+)
 IF [%1]==[scripts] (
 cd /D "F:\Scripts"
 )
