@@ -10,7 +10,7 @@ IF [%1]==[vim] (
 cd /D "C:\Program Files (x86)\Vim"
 )
 IF [%1]==[~] (
-cd /D "C:\Users\Rudy\Desktop"
+cd /D "%USERPROFILE%\Desktop"
 )
 IF [%1]==[scripts] (
 cd /D "F:\Scripts"
