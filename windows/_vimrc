@@ -177,6 +177,7 @@ nnoremap <leader>b :sp<CR>
 "Bookmark broken with CtrlP Integration currently
 let g:bookmark_disable_ctrlp = 1
 let g:ctrlp_cmd = 'CtrlPBuffer'
+let g:bookmark_auto_close = 1
 
 nnoremap <Leader>f :Grep<Space>
 
@@ -206,3 +207,4 @@ nnoremap <Leader>7 :let [&nu, &rnu] = [!&rnu, &nu+&rnu==1]<CR>nu
 "Change encoding of current file
 :command SaveUTF8 write ++enc=utf-8 %
 :command SaveUTF16 write ++enc=utf-16le "%"
+
