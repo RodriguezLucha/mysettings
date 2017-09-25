@@ -199,5 +199,10 @@ func! Refresh_helper(timer)
     silent! :e!  
 endfunc
 nnoremap <silent> ss :call Refresh()<CR>
-"9
+
+"Use relative line numbers
 nnoremap <Leader>7 :let [&nu, &rnu] = [!&rnu, &nu+&rnu==1]<CR>nu
+
+"Change encoding of current file
+:command SaveUTF8 write ++enc=utf-8 %
+:command SaveUTF16 write ++enc=utf-16le "%"
