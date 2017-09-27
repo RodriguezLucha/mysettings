@@ -16,6 +16,3 @@ alias dev="sudo su -m dev"
 alias root="sudo su -m root"
 alias oesismonitor="sudo su -m oesismonitor"
 
-
-bind "\e[1;9D": backward-word
-bind "\e[1;9C": forward-word
