@@ -124,7 +124,7 @@ au GUIEnter * simalt ~x
 
 "Easy grep settings 
 set grepprg=ag
-let g:EasyGrepCommand=1
+let g:EasyGrepCommand=0
 let g:EasyGrepJumpToMatch=0
 let g:EasyGrepSearchCurrentBufferDir=0
 
