@@ -208,3 +208,6 @@ nnoremap <Leader>7 :let [&nu, &rnu] = [!&rnu, &nu+&rnu==1]<CR>nu
 :command SaveUTF8 write ++enc=utf-8 %
 :command SaveUTF16 write ++enc=utf-16le "%"
 
+"Trailing spaces
+set listchars=tab:▸-,trail:·
+set list
