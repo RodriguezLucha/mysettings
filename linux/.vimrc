@@ -33,6 +33,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'breuckelen/vim-resize'
 Plugin 'maxbrunsfeld/vim-yankstack'
+Plugin 'mhinz/vim-hugefile'
 
 call vundle#end()
 filetype plugin indent on
