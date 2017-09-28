@@ -1,8 +1,6 @@
 "Linux Vimrc
 set nocompatible
 filetype off
-"TODO: What
-"
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -37,8 +35,9 @@ Plugin 'breuckelen/vim-resize'
 Plugin 'maxbrunsfeld/vim-yankstack'
 
 call vundle#end()
-filetype plugin indent on    " required
+filetype plugin indent on
 
+set encoding=utf-8
 set noeb vb t_vb=
 set number
 set nowrap
@@ -62,26 +61,23 @@ noremap <C-right> zl
 "Set space as leader key
 let mapleader = "\<Space>"
 
-"Bookmarks
-let g:bookmark_sign = '-'
-let g:bookmark_annotation_sign = '='
-
 "Syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-syntax enable 
+syntax enable
 set termencoding=utf8
 set term=xterm
 set t_Co=256
 
-set background=dark 
+set background=dark
+let g:solarized_diffmode="high"
 colorscheme solarized
 
-"Easy grep settings 
+"Easy grep settings
 set grepprg=ag
-let g:EasyGrepCommand=1
+let g:EasyGrepCommand=0
 let g:EasyGrepJumpToMatch=0
 let g:EasyGrepSearchCurrentBufferDir=0
 
@@ -134,6 +130,7 @@ nnoremap <leader>b :sp<CR>
 "Bookmark broken with CtrlP Integration currently
 let g:bookmark_disable_ctrlp = 1
 let g:ctrlp_cmd = 'CtrlPBuffer'
+let g:bookmark_auto_close = 1
 
 nnoremap <Leader>f :Grep<Space>
 
@@ -147,9 +144,23 @@ nnoremap <Leader>y :TagbarToggle<CR>
 "Yankstack
 nmap <C-up> <Plug>yankstack_substitute_older_paste
 nmap <C-down> <Plug>yankstack_substitute_newer_paste
-let g:yankstack_map_keys = 0
-"let timer = timer_start(2000, 'SaveFile',{'repeat':-1}) 
-func! SaveFile(timer)   
-    silent! :e!  
-endfunc
 
+let g:yankstack_map_keys = 0
+function Refresh()
+    let timer = timer_start(2000, 'Refresh_helper',{'repeat':-1}) 
+endfunc
+func! Refresh_helper(timer)
+    silent! :e!
+endfunc
+nnoremap <silent> ss :call Refresh()<CR>
+
+"Use relative line numbers
+nnoremap <Leader>7 :let [&nu, &rnu] = [!&rnu, &nu+&rnu==1]<CR>nu
+
+"Change encoding of current file
+:command SaveUTF8 write ++enc=utf-8 %
+:command SaveUTF16 write ++enc=utf-16le "%"
+
+"Trailing spaces
+set listchars=tab:▸-,trail:·
+set list

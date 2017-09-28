@@ -1,9 +1,5 @@
 "Windows Vimrc 
-"Start up pathogen for Vundle
-
 execute pathogen#infect()
-
-"Start up Vundle to install other plugins
 set nocompatible
 filetype off
 set rtp+=$HOME/vimfiles/bundle/Vundle.vim/
@@ -39,13 +35,12 @@ Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'breuckelen/vim-resize'
 Plugin 'maxbrunsfeld/vim-yankstack'
 
-call vundle#end() 
-filetype plugin indent on 
+call vundle#end()
+filetype plugin indent on
 
 source $VIMRUNTIME/vimrc_example.vim
 source $VIMRUNTIME/mswin.vim
 behave mswin
-
 set encoding=utf-8
 set guifont=DejaVu_Sans_Mono_for_Powerline:h14:cANSI:qDRAFT
 set rop=type:directx
@@ -73,7 +68,6 @@ noremap <C-right> zl
 set dir=C:\Windows\Temp\vim\dir\
 set backupdir=C:\Windows\Temp\vim\backup\
 set undodir=C:\Windows\Temp\vim\undo\
-
 "Set space as leader key
 let mapleader = "\<Space>"
 
@@ -115,14 +109,14 @@ if !empty($CONEMUBUILD)
     endfunc
     endif
 
-syntax enable 
-set background=dark 
+syntax enable
+set background=dark
 let g:solarized_diffmode="high"
 colorscheme solarized
 
 au GUIEnter * simalt ~x
 
-"Easy grep settings 
+"Easy grep settings
 set grepprg=ag
 let g:EasyGrepCommand=0
 let g:EasyGrepJumpToMatch=0
@@ -196,8 +190,8 @@ let g:yankstack_map_keys = 0
 function Refresh()
     let timer = timer_start(2000, 'Refresh_helper',{'repeat':-1}) 
 endfunc
-func! Refresh_helper(timer)   
-    silent! :e!  
+func! Refresh_helper(timer)
+    silent! :e!
 endfunc
 nnoremap <silent> ss :call Refresh()<CR>
 
