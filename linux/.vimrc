@@ -34,6 +34,8 @@ Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'breuckelen/vim-resize'
 Plugin 'maxbrunsfeld/vim-yankstack'
 Plugin 'mhinz/vim-hugefile'
+Plugin 'idanarye/vim-vebugger'
+Plugin 'rhlobo/vim-super-retab'
 
 call vundle#end()
 filetype plugin indent on
