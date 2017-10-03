@@ -16,3 +16,12 @@ alias dev="sudo su -m dev"
 alias root="sudo su -m root"
 alias oesismonitor="sudo su -m oesismonitor"
 
+if [ -f ~/.powerline-shell.json ]; then
+    function _update_ps1() {
+        PS1="$(powerline-shell $?)"
+    }
+
+    if [ "$TERM" != "linux" ]; then
+        PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+    fi
+fi
