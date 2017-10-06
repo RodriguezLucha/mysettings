@@ -3,12 +3,13 @@ set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+"TODO nothing to do just testing bold font
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'vim-airline/vim-airline' 
+Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdcommenter'
@@ -36,6 +37,7 @@ Plugin 'maxbrunsfeld/vim-yankstack'
 Plugin 'mhinz/vim-hugefile'
 Plugin 'idanarye/vim-vebugger'
 Plugin 'rhlobo/vim-super-retab'
+Plugin 'airblade/vim-gitgutter'
 
 call vundle#end()
 filetype plugin indent on
@@ -77,6 +79,7 @@ set t_Co=256
 set background=dark
 let g:solarized_diffmode="high"
 colorscheme solarized
+highlight Normal ctermbg=NONE
 
 "Easy grep settings
 set grepprg=ag
@@ -167,3 +170,6 @@ nnoremap <Leader>7 :let [&nu, &rnu] = [!&rnu, &nu+&rnu==1]<CR>nu
 "Trailing spaces
 set listchars=tab:▸-,trail:·
 set list
+
+:command FlipH windo wincmd K
+:command FlipV windo wincmd H

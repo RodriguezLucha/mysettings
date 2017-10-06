@@ -25,3 +25,5 @@ if [ -f ~/.powerline-shell.json ]; then
         PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
     fi
 fi
+
+bind '"\t":menu-complete'
