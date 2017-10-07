@@ -26,4 +26,6 @@ if [ -f ~/.powerline-shell.json ]; then
     fi
 fi
 
+PATH=~/scripts:$PATH
+
 bind '"\t":menu-complete'
