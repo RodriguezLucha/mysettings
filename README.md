@@ -9,6 +9,7 @@
 ### Under account
 * `ln -s /home/rudy/vimsettings/linux/.vimrc .vimrc`
 * `ln -s /home/rudy/.vim .vim`
+* `ln -s /home/rudy/vimsettings/linux/scripts scripts`
 
 
 # Windows
