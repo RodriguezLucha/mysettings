@@ -37,7 +37,6 @@ Plugin 'maxbrunsfeld/vim-yankstack'
 Plugin 'mhinz/vim-hugefile'
 Plugin 'idanarye/vim-vebugger'
 Plugin 'rhlobo/vim-super-retab'
-
 Plugin 'valloric/youcompleteme'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'rubycomplete.vim'
@@ -95,11 +94,7 @@ let g:EasyGrepSearchCurrentBufferDir=0
 "Need to set this for airline
 set laststatus=2
 let g:airline_powerline_fonts = 1
-let g:airline_section_b = '%{getcwd()}'
-let g:airline_section_c = '%t'
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#formatter = 'unique_tail'
-
 let g:airline_theme='solarized'
 let g:airline_solarized_bg='dark'
 
