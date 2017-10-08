@@ -126,12 +126,12 @@ let g:lt_quickfix_list_toggle_map = '<leader>q'
 let g:lt_location_list_toggle_map = '<leader>w'
 
 "Move splits quickly
-nnoremap <leader>k :wincmd k<CR>
-nnoremap <leader>j :wincmd j<CR>
-nnoremap <leader>h :wincmd h<CR>
-nnoremap <leader>l :wincmd l<CR>
-nnoremap <leader>g :vsp<CR>
-nnoremap <leader>b :sp<CR>
+"nnoremap <leader>k :wincmd k<CR>
+"nnoremap <leader>j :wincmd j<CR>
+"nnoremap <leader>h :wincmd h<CR>
+"nnoremap <leader>l :wincmd l<CR>
+"nnoremap <leader>g :vsp<CR>
+"nnoremap <leader>b :sp<CR>
 
 "Bookmark broken with CtrlP Integration currently
 let g:bookmark_disable_ctrlp = 1
