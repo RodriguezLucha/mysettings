@@ -1,0 +1,32 @@
+[alias]
+    co = checkout
+    st = status
+    ci = commit
+    br = branch
+    cl = clean -xdf
+    re = reset --hard
+    up = submodule update --recursive --remote
+    dl = !git branch | grep -v master | xargs git branch -D
+    lo = log --decorate --oneline --graph
+    ir1 = rebase -i HEAD~1
+    ir2 = rebase -i HEAD~2
+    ir3 = rebase -i HEAD~3
+    ir4 = rebase -i HEAD~4
+    ir5 = rebase -i HEAD~5
+    ir6 = rebase -i HEAD~6
+    ir7 = rebase -i HEAD~7
+    ir8 = rebase -i HEAD~8
+    ir9 = rebase -i HEAD~9
+    ir10 = rebase -i HEAD~10
+    squash-to = "!__git_squash_to() { cur_branch=$(git rev-parse --abbrev-ref HEAD"
+    d = difftool
+[user]
+    name = rudy
+    email = rudy@opswat.com
+[diff]
+    tool = vimdiff
+
+[push]
+	default = simple
+[core]
+	excludesfile = /home/rudy/.gitignore_global
