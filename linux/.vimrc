@@ -158,7 +158,7 @@ endfunc
 func! Refresh_helper(timer)
     silent! :e!
 endfunc
-nnoremap <silent> ss :call Refresh()<CR>
+"nnoremap <silent> ss :call Refresh()<CR>
 
 "Use relative line numbers
 nnoremap <Leader>7 :let [&nu, &rnu] = [!&rnu, &nu+&rnu==1]<CR>nu

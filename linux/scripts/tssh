@@ -1,0 +1,19 @@
+#!/bin/bash
+HOSTS=
+
+if [ $1 = 'all' ]; then
+    HOSTS="gateprodmas gateproddev gateprodacc sarumanprod shelobprod usprodmas usproddev vprod elastic gatetest sarumantest shelobtest ustest vtest"
+elif [ $1 = 'prod' ]; then
+    HOSTS="gateprodmas gateproddev gateprodacc sarumanprod shelobprod usprodmas usproddev vprod"
+elif [ $1 = 'test' ]; then
+    HOSTS="elastic gatetest sarumantest shelobtest ustest vtest"
+else
+    exit
+fi
+
+for host in $HOSTS
+do
+    tmux splitw "ssh $host"
+    tmux select-layout tiled
+done
+tmux set-window-option synchronize-panes on
