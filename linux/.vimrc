@@ -90,6 +90,7 @@ set grepprg=ag
 let g:EasyGrepCommand=0
 let g:EasyGrepJumpToMatch=0
 let g:EasyGrepSearchCurrentBufferDir=0
+let g:gutentags_ctags_tagfile=".tags"
 
 "Need to set this for airline
 set laststatus=2
@@ -173,3 +174,4 @@ set list
 
 :command FlipH windo wincmd K
 :command FlipV windo wincmd H
+
