@@ -169,7 +169,7 @@ nnoremap <Leader>7 :let [&nu, &rnu] = [!&rnu, &nu+&rnu==1]<CR>nu
 :command SaveUTF16 write ++enc=utf-16le "%"
 
 "Trailing spaces
-set listchars=tab:▸-,trail:·
+set listchars=tab:▸\ ,trail:·
 set list
 
 :command FlipH windo wincmd K

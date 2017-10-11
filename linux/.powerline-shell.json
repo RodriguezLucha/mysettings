@@ -1,0 +1,11 @@
+{
+    "segments": [
+        "hostname",
+        "username",
+        "cwd",
+        "newline",
+        "git",
+        "root"
+    ],
+    "theme": "default"
+}
