@@ -57,12 +57,6 @@ set softtabstop=4
 set tw=0
 set expandtab
 
-"Resize windows quickly
-let g:vim_resize_disable_auto_mappings = 1
-map <up> :CmdResizeUp<cr>
-map <down> :CmdResizeDown<cr>
-map <left> :CmdResizeLeft<cr>
-map <right> :CmdResizeRight<cr>
 
 "Easy scrolling
 noremap <C-left> zh
@@ -128,12 +122,10 @@ let g:lt_quickfix_list_toggle_map = '<leader>q'
 let g:lt_location_list_toggle_map = '<leader>w'
 
 "Move splits quickly
-"nnoremap <leader>k :wincmd k<CR>
-"nnoremap <leader>j :wincmd j<CR>
-"nnoremap <leader>h :wincmd h<CR>
-"nnoremap <leader>l :wincmd l<CR>
-"nnoremap <leader>g :vsp<CR>
-"nnoremap <leader>b :sp<CR>
+map <up> :wincmd k<cr>
+map <down> :wincmd j<cr>
+map <left> :wincmd h<cr>
+map <right> :wincmd l<cr>
 
 "Bookmark broken with CtrlP Integration currently
 let g:bookmark_disable_ctrlp = 1
