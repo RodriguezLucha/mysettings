@@ -42,6 +42,7 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'rubycomplete.vim'
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'chiel92/vim-autoformat'
 
 call vundle#end()
 filetype plugin indent on
@@ -175,3 +176,4 @@ set list
 :command FlipH windo wincmd K
 :command FlipV windo wincmd H
 
+noremap <F3> :Autoformat<CR>
