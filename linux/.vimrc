@@ -43,7 +43,8 @@ Plugin 'rubycomplete.vim'
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'chiel92/vim-autoformat'
-
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 call vundle#end()
 filetype plugin indent on
 
@@ -57,6 +58,8 @@ set softtabstop=4
 set tw=0
 set expandtab
 
+"Snipping shortcut
+let g:UltiSnipsExpandTrigger='<leader>f'
 
 "Easy scrolling
 noremap <C-left> zh
@@ -86,7 +89,6 @@ let g:EasyGrepCommand=0
 let g:EasyGrepJumpToMatch=0
 let g:EasyGrepSearchCurrentBufferDir=0
 let g:gutentags_ctags_tagfile=".tags"
-nnoremap <Leader>f :Grep<Space>
 
 "Need to set this for airline
 set laststatus=2
@@ -113,7 +115,7 @@ nnoremap <leader>s :update<CR>
 nnoremap <leader>e :quit<CR>
 
 "NERDTree stuff
-nnoremap <Leader>t :NERDTreeToggle<Enter>
+nnoremap <leader>t :NERDTreeToggle<Enter>
 let g:NERDTreeChDirMode=1
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
@@ -140,14 +142,14 @@ nnoremap <leader>o :MRU<CR>
 nnoremap <leader>c :CDC<CR>
 
 "Tagbar stuff
-nnoremap <Leader>y :TagbarToggle<CR>
+nnoremap <leader>y :TagbarToggle<CR>
 
 "Yankstack
 nmap <C-up> <Plug>yankstack_substitute_older_paste
 nmap <C-down> <Plug>yankstack_substitute_newer_paste
 
 "Use relative line numbers
-nnoremap <Leader>7 :let [&nu, &rnu] = [!&rnu, &nu+&rnu==1]<CR>nu
+nnoremap <leader>7 :let [&nu, &rnu] = [!&rnu, &nu+&rnu==1]<CR>nu
 
 "Change encoding of current file
 command SaveUTF8 write ++enc=utf-8 %
