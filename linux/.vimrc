@@ -43,8 +43,8 @@ Plugin 'rubycomplete.vim'
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'chiel92/vim-autoformat'
-Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+Plugin 'SirVer/ultisnips'
 call vundle#end()
 filetype plugin indent on
 
@@ -58,8 +58,6 @@ set softtabstop=4
 set tw=0
 set expandtab
 
-"Snipping shortcut
-let g:UltiSnipsExpandTrigger='<leader>f'
 
 "Easy scrolling
 noremap <C-left> zh
@@ -67,6 +65,9 @@ noremap <C-right> zl
 
 "Set space as leader key
 let mapleader = "\<Space>"
+"
+"Snipping shortcut
+let g:UltiSnipsExpandTrigger="<leader>f"
 
 "Syntastic
 set statusline+=%#warningmsg#
