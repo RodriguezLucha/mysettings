@@ -86,6 +86,7 @@ let g:EasyGrepCommand=0
 let g:EasyGrepJumpToMatch=0
 let g:EasyGrepSearchCurrentBufferDir=0
 let g:gutentags_ctags_tagfile=".tags"
+nnoremap <Leader>f :Grep<Space>
 
 "Need to set this for airline
 set laststatus=2
@@ -101,6 +102,7 @@ command CDC cd %:p:h
 "Quick format source
 com! FormatXML %!xmllint --format -
 com! FormatJSON %!python -m json.tool
+noremap <F3> :Autoformat<CR>
 
 "Folding automatically
 set foldmethod=indent
@@ -133,8 +135,6 @@ let g:bookmark_disable_ctrlp = 1
 let g:ctrlp_cmd = 'CtrlPBuffer'
 let g:bookmark_auto_close = 1
 
-nnoremap <Leader>f :Grep<Space>
-
 "Most Recently Accessed Files Shortcut
 nnoremap <leader>o :MRU<CR>
 nnoremap <leader>c :CDC<CR>
@@ -146,27 +146,18 @@ nnoremap <Leader>y :TagbarToggle<CR>
 nmap <C-up> <Plug>yankstack_substitute_older_paste
 nmap <C-down> <Plug>yankstack_substitute_newer_paste
 
-let g:yankstack_map_keys = 0
-function Refresh()
-    let timer = timer_start(2000, 'Refresh_helper',{'repeat':-1}) 
-endfunc
-func! Refresh_helper(timer)
-    silent! :e!
-endfunc
-"nnoremap <silent> ss :call Refresh()<CR>
-
 "Use relative line numbers
 nnoremap <Leader>7 :let [&nu, &rnu] = [!&rnu, &nu+&rnu==1]<CR>nu
 
 "Change encoding of current file
-:command SaveUTF8 write ++enc=utf-8 %
-:command SaveUTF16 write ++enc=utf-16le "%"
+command SaveUTF8 write ++enc=utf-8 %
+command SaveUTF16 write ++enc=utf-16le "%"
 
 "Trailing spaces
 set listchars=tab:▸\ ,trail:·
 set list
 
-:command FlipH windo wincmd K
-:command FlipV windo wincmd H
+"Flip vertical and horizontal shortcuts
+command FlipH windo wincmd K
+command FlipV windo wincmd H
 
-noremap <F3> :Autoformat<CR>
