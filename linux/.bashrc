@@ -29,6 +29,9 @@ fi
 if [ -f /usr/share/autojump/autojump.sh ]; then
     . /usr/share/autojump/autojump.sh
 fi
+
+[[ -s /home/rodri/.autojump/etc/profile.d/autojump.sh ]] && source /home/rodri/.autojump/etc/profile.d/autojump.sh
+
 PATH=~/scripts:$PATH
 
 bind '"\t":menu-complete'

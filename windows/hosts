@@ -1,0 +1,18 @@
+192.168.1.167     rudyspvm
+/*192.168.137.1     RUDY-W8E*/
+
+10.0.0.246   gateprodmas
+10.0.0.249   gateproddev
+10.0.0.250   gateprodacc
+10.0.0.251   sarumanprod
+10.0.0.252   shelobprod
+10.0.0.41    usprodmas
+10.0.0.42    usproddev
+10.0.0.248   vprod
+
+10.0.72.124  elastic
+10.0.72.125  gatetest
+10.0.72.122  sarumantest
+10.0.72.123  shelobtest
+10.0.72.121  ustest
+10.0.72.126  vtest
