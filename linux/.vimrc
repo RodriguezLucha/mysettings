@@ -2,6 +2,7 @@
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/vimsettings/linux
 call vundle#begin()
 "TODO nothing to do just testing bold font
 
@@ -35,7 +36,6 @@ Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'breuckelen/vim-resize'
 Plugin 'maxbrunsfeld/vim-yankstack'
 Plugin 'mhinz/vim-hugefile'
-Plugin 'idanarye/vim-vebugger'
 Plugin 'rhlobo/vim-super-retab'
 Plugin 'valloric/youcompleteme'
 Plugin 'vim-ruby/vim-ruby'
@@ -68,6 +68,7 @@ let mapleader = "\<Space>"
 "
 "Snipping shortcut
 let g:UltiSnipsExpandTrigger="<leader>f"
+let g:UltiSnipsSnippetsDir="~/vimsettings/linux/UltiSnips/"
 
 "Syntastic
 set statusline+=%#warningmsg#
