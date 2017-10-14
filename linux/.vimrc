@@ -67,7 +67,7 @@ noremap <C-right> zl
 let mapleader = "\<Space>"
 "
 "Snipping shortcut
-let g:UltiSnipsExpandTrigger="<leader>f"
+let g:UltiSnipsExpandTrigger="<C-f>"
 let g:UltiSnipsSnippetsDir="~/vimsettings/linux/UltiSnips/"
 
 "Syntastic
