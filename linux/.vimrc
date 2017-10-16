@@ -1,10 +1,9 @@
-"Linux Vimrc
+let all_the_plugins=$ALL_THE_PLUGINS
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 set rtp+=~/vimsettings/linux
 call vundle#begin()
-"TODO nothing to do just testing bold font
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
@@ -37,14 +36,17 @@ Plugin 'breuckelen/vim-resize'
 Plugin 'maxbrunsfeld/vim-yankstack'
 Plugin 'mhinz/vim-hugefile'
 Plugin 'rhlobo/vim-super-retab'
-Plugin 'valloric/youcompleteme'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'rubycomplete.vim'
 Plugin 'ryanoasis/vim-devicons'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'chiel92/vim-autoformat'
 Plugin 'honza/vim-snippets'
 Plugin 'SirVer/ultisnips'
+
+if all_the_plugins == '1'
+    Plugin 'chiel92/vim-autoformat'
+    Plugin 'rubycomplete.vim'
+    Plugin 'airblade/vim-gitgutter'
+    Plugin 'vim-ruby/vim-ruby'
+    Plugin 'valloric/youcompleteme'
+endif
 call vundle#end()
 filetype plugin indent on
 
@@ -57,7 +59,6 @@ set shiftwidth=4
 set softtabstop=4
 set tw=0
 set expandtab
-
 
 "Easy scrolling
 noremap <C-left> zh
