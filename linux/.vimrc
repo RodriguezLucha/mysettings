@@ -41,6 +41,7 @@ Plugin 'honza/vim-snippets'
 Plugin 'SirVer/ultisnips'
 
 if all_the_plugins == '1'
+    Plugin 'davidhalter/jedi-vim'
     Plugin 'chiel92/vim-autoformat'
     Plugin 'rubycomplete.vim'
     Plugin 'airblade/vim-gitgutter'
