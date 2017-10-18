@@ -1,11 +1,5 @@
 #!/usr/bin/python3
 import subprocess
-import argparse
-
-parser = argparse.ArgumentParser()
-parser.add_argument("vm_number", help="1 for Linux Mint, 2 for Centos", type=int)
-args = parser.parse_args()
-vm_number = args.vm_number
 
 def run_cmd(cmd):
     subprocess.call(cmd, shell=True)
@@ -13,11 +7,7 @@ def run_cmd(cmd):
 vmrun = r'/cygdrive/c/Program\ Files\ \(x86\)/VMware/VMware\ VIX/vmrun.exe'
 
 linux_mint_vmx = r'"C:\\Users\\rodri\\Documents\\Virtual Machines\\LinuxMint\\LinuxMint.vmx"'
-linux_centos_vmx = r'"C:\\Users\\rodri\\Documents\\Virtual Machines\\CentOS\\CentOS.vmx"'
 
-if(vm_number == 2):
-    cmd = f"{vmrun} getGuestIPAddress {linux_centos_vmx}"
-else:
-    cmd = f"{vmrun} getGuestIPAddress {linux_mint_vmx}"
+cmd = f"{vmrun} getGuestIPAddress {linux_mint_vmx}"
 
 run_cmd(cmd)
