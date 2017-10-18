@@ -17,6 +17,8 @@ alias oesismonitor="sudo su -m oesismonitor"
 
 if [ $HOSTNAME = "surface-vm" ]; then
     export ALL_THE_PLUGINS=1
+elif [ $HOSTNAME = "RUDY-SURFACE" ]; then
+    export ALL_THE_PLUGINS=1
 else
     export ALL_THE_PLUGINS=0
 fi
