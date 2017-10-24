@@ -107,7 +107,7 @@ command CDC cd %:p:h
 
 "Quick format source
 com! FormatXML %!xmllint --format -
-com! FormatJSON %!python -m json.tool
+com! FormatJSON %!jq .
 noremap <F3> :Autoformat<CR>
 
 "Folding automatically
