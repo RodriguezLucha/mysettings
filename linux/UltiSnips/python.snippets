@@ -33,3 +33,8 @@ cursor = col.find({"sha1":"123"})
 for document in cursor:
     sha = document["sha1"]
 endsnippet
+
+snippet httpget
+import requests
+parsed=requests.get("http://www.site.com", headers={"name":value}).json()
+endsnippet
