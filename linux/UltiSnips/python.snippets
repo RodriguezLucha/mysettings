@@ -2,7 +2,7 @@ snippet run_cmd
 import subprocess
 
 def run_cmd(cmd):
-	subprocess.call(cmd, shell=True)
+    subprocess.call(cmd, shell=True)
 
 endsnippet
 
@@ -20,4 +20,16 @@ endsnippet
 
 snippet regex
 if re.match(regex, str):
+endsnippet
+
+snippet mongodb
+from pymongo import MongoClient
+
+client = MongoClient("mongodb://localhost:27017")
+db = client['feeds']
+col = db['metascan_hashes']
+cursor = col.find({"sha1":"123"})
+
+for document in cursor:
+    sha = document["sha1"]
 endsnippet
