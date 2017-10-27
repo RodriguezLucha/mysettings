@@ -19,6 +19,8 @@ if [ $HOSTNAME = "surface-vm" ]; then
     export ALL_THE_PLUGINS=1
 elif [ $HOSTNAME = "RUDY-SURFACE" ]; then
     export ALL_THE_PLUGINS=1
+elif [ $HOSTNAME = "rudy-w8e" ]; then
+    export ALL_THE_PLUGINS=1
 else
     export ALL_THE_PLUGINS=0
 fi
@@ -40,3 +42,9 @@ PATH=~/scripts:$PATH
 
 bind '"\t":menu-complete'
 
+
+PATH="/home/rudy/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/rudy/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/rudy/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/rudy/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/rudy/perl5"; export PERL_MM_OPT;
