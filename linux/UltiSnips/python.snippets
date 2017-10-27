@@ -40,6 +40,9 @@ parsed=requests.get("http://www.site.com", headers={"name":value}).json()
 endsnippet
 
 snippet map
-input_list
 output_list = list(map(lambda x: int(x), input_list))
+endsnippet
+
+snippet grep
+output_list = list(filter(lambda x: x < 0, input_list))
 endsnippet
