@@ -38,3 +38,8 @@ snippet httpget
 import requests
 parsed=requests.get("http://www.site.com", headers={"name":value}).json()
 endsnippet
+
+snippet map
+input_list
+output_list = list(map(lambda x: int(x), input_list))
+endsnippet
