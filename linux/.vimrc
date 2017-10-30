@@ -54,6 +54,7 @@ filetype plugin indent on
 set encoding=utf-8
 set noeb vb t_vb=
 set number
+set relativenumber
 set nowrap
 set tabstop=4
 set shiftwidth=4
