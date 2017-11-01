@@ -155,6 +155,7 @@ nmap <C-down> <Plug>yankstack_substitute_newer_paste
 
 "Use relative line numbers
 nnoremap <leader>7 :let [&nu, &rnu] = [!&rnu, &nu+&rnu==1]<CR>nu
+nnoremap <leader>6 :set foldmethod=indent<CR>
 
 "Change encoding of current file
 command SaveUTF8 write ++enc=utf-8 %
