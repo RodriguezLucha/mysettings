@@ -92,6 +92,7 @@ highlight Normal ctermbg=NONE
 set grepprg=ag
 let g:EasyGrepCommand=0
 let g:EasyGrepJumpToMatch=0
+let g:EasyGrepRecursive=1
 let g:EasyGrepSearchCurrentBufferDir=0
 let g:gutentags_ctags_tagfile=".tags"
 
