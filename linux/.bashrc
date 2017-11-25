@@ -41,6 +41,7 @@ fi
 PATH=~/scripts:$PATH
 
 bind '"\t":menu-complete'
+set -o vi
 
 
 PATH="/home/rudy/perl5/bin${PATH:+:${PATH}}"; export PATH;
