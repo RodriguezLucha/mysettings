@@ -40,8 +40,8 @@ fi
 
 PATH=~/scripts:$PATH
 
-bind '"\t":menu-complete'
 set -o vi
+bind '"\t":menu-complete'
 
 
 PATH="/home/rudy/perl5/bin${PATH:+:${PATH}}"; export PATH;
