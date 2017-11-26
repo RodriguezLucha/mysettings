@@ -46,10 +46,12 @@ endsnippet
 
 snippet map
 output_list = list(map(lambda x: int(x), input_list))
+output_list = [int(x) for x in input_list]
 endsnippet
 
 snippet grep
 output_list = list(filter(lambda x: x < 0, input_list))
+output_list = [x for x in input_list if x < 0]
 endsnippet
 
 snippet readjson
