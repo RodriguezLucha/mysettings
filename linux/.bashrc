@@ -42,6 +42,7 @@ PATH=~/scripts:$PATH
 
 set -o vi
 bind '"\t":menu-complete'
+bind -m vi-insert "\C-l":clear-screen
 
 
 PATH="/home/rudy/perl5/bin${PATH:+:${PATH}}"; export PATH;
