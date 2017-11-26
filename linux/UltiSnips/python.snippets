@@ -58,3 +58,23 @@ snippet readjson
 with open(file_input) as data_file:
     data = json.load(data_file)
 endsnippet
+
+snippet shebang
+#!/usr/bin/python3
+endsnippet
+
+snippet parseargs
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument("input_string", help="the string that will be used")
+parser.add_argument("times_written", help="number of times string repeated", type=int)
+parser.add_argument("-c", "--caps", action="store_true", help="convert the string uppercase")
+args = parser.parse_args()
+result = args.input_string * args.times_written
+if args.caps :
+    result = result.upper()
+
+print(result)
+#./script cactus 3 -c
+endsnippet
