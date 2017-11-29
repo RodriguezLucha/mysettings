@@ -78,6 +78,8 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
 syntax enable
 set termencoding=utf8
 set term=xterm
@@ -91,9 +93,10 @@ highlight Normal ctermbg=NONE
 "Easy grep settings
 set grepprg=ag
 let g:EasyGrepCommand=0
-let g:EasyGrepJumpToMatch=0
-let g:EasyGrepRecursive=1
+let g:EasyGrepJumpToMatch=1
+let g:EasyGrepRecursive=0
 let g:EasyGrepSearchCurrentBufferDir=0
+
 let g:gutentags_ctags_tagfile=".tags"
 
 "Need to set this for airline
