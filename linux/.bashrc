@@ -14,6 +14,8 @@ alias l="ls --color --classify"
 alias dev="sudo su -m dev"
 alias root="sudo su -m root"
 alias oesismonitor="sudo su -m oesismonitor"
+alias python=/usr/bin/python3.6
+alias python3=/usr/bin/python3.6
 
 if [ $HOSTNAME = "rudyspvm" ]; then
     export ALL_THE_PLUGINS=1
