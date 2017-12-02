@@ -81,9 +81,40 @@ endsnippet
 
 snippet named_args
 def some_function_nodefaults(*, arg1, arg2):
-	return arg1 + arg2
+    return arg1 + arg2
 def some_function_defaults(*, arg1=1, arg2=10):
-	return arg1 + arg2
+    return arg1 + arg2
 print(some_function_nodefaults(arg1=2, arg2=20))
 print(some_function_defaults())
 endsnippet
+
+snippet classes_full_example
+#./main.py
+from animals.pets import Pets
+pet_toby = Pets(name="Toby")
+pet_toby.speak()
+
+#./animals/pets.py
+class Pets:
+    """A simple example class called Pets"""
+    def __init__(self, *, name):
+        self.name = name
+    def speak(self):
+        self.__get_sound()
+        print(view_pets())
+    def __get_sound(self):
+        print(self.name + " says Woof")
+
+#./animals/test_pets.py
+import unittest
+from animals.pets import Pets
+class PetTest(unittest.TestCase):
+    def setUp(self):
+        self.dog = Pets(name="test")
+    def test_spea(self):
+        self.assertEqual(self.dog.name, "test")
+
+./animals/__init__.py must exist
+endsnippet
+
+
