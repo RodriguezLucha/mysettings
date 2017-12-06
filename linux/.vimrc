@@ -122,6 +122,7 @@ set foldlevel=3
 "Quick save
 nnoremap <leader>s :update<CR>
 nnoremap <leader>e :quit<CR>
+nnoremap <leader>E :quitall!<CR>
 
 "NERDTree stuff
 nnoremap <leader>t :NERDTreeToggle<Enter>
