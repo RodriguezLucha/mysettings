@@ -173,7 +173,11 @@ set list
 command FlipH windo wincmd K
 command FlipV windo wincmd H
 
+"Easy navigation to next and previous difference
 if &diff
     map dj ]c
     map dk [c
 endif
+
+"Print out full path of current file
+nnoremap <leader>1 :echo expand('%:p')
