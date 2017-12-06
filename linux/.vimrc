@@ -172,3 +172,8 @@ set list
 "Flip vertical and horizontal shortcuts
 command FlipH windo wincmd K
 command FlipV windo wincmd H
+
+if &diff
+    map dj ]c
+    map dk [c
+endif
