@@ -27,21 +27,32 @@ else
     export ALL_THE_PLUGINS=0
 fi
 
-if [ -f ~/.powerline-shell.json ]; then
-    function _update_ps1() {
-        PS1="$(powerline-shell $?)"
-    }
-    if [ "$TERM" != "linux" ]; then
-        PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
-    fi
+#Powerline-shell-proxy
+if ! pgrep -f powerline-shell.py > /dev/null
+then
+    ~/powerline-shell-proxy/powerline-shell.py &
 fi
 
+export POWERLINE_SOCKET="$HOME/.powerline-daemon-socket-$(hostname)"
+_powerline_prompt() {
+	RET=$?  # save return code before calling whoami
+	JOBS=0
+	PS1="$(echo $(whoami)";$$;$RET;bash;$PWD;$JOBS;$SSH_CLIENT" | nc -U $POWERLINE_SOCKET) "
+}
+export PROMPT_COMMAND="_powerline_prompt"
+
+
+
+#Autojump
 [[ -s /home/rodri/.autojump/etc/profile.d/autojump.sh ]] && source /home/rodri/.autojump/etc/profile.d/autojump.sh
 [[ -s /home/rudy/.autojump/etc/profile.d/autojump.sh ]] && source /home/rudy/.autojump/etc/profile.d/autojump.sh
 [[ -s /usr/share/autojump/autojump.sh ]] && source /usr/share/autojump/autojump.sh
 
+#Scripts
 PATH=~/scripts:$PATH
 
+
+#vi mode
 set -o vi
 bind '"\t":menu-complete'
 bind -m vi-insert "\C-l":clear-screen
