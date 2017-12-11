@@ -2,7 +2,7 @@ snippet run_cmd
 import subprocess
 
 def run_cmd(cmd):
-    subprocess.call(cmd, shell=True)
+    return subprocess.check_output(cmd, stderr=subprocess.STDOUT, shell=True)
 
 endsnippet
 
