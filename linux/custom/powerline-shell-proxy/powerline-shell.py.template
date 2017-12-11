@@ -1,0 +1,172 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+VERBOSE=0
+
+import argparse
+import os
+import sys
+import socket
+
+if VERBOSE == 1:
+    import logging
+    import datetime
+    logging.basicConfig( filename=os.getenv('HOME')+'/.powerline-daemon.log', level=logging.DEBUG)
+
+def warn(msg):
+    print '[powerline-bash] ', msg
+
+class Powerline:
+    symbols = {
+        'compatible': {
+            'lock': 'RO',
+            'network': 'SSH',
+            'separator': u'\u25B6',
+            'separator_thin': u'\u276F'
+        },
+        'patched': {
+            'lock': u'\uE0A2',
+            'network': u'\uE0A2',
+            'separator': u'\uE0B0',
+            'separator_thin': u'\uE0B1'
+        },
+        'flat': {
+            'lock': '',
+            'network': '',
+            'separator': '',
+            'separator_thin': ''
+        },
+    }
+
+    color_templates = {
+        'bash': '\\[\\e%s\\]',
+        'zsh': '%%{%s%%}',
+        'bare': '%s',
+    }
+
+    def __init__(self, args, cwd):
+        self.args = args
+        self.cwd = cwd
+        mode, shell = args.mode, args.shell
+        self.color_template = self.color_templates[shell]
+        self.reset = self.color_template % '[0m'
+        self.lock = Powerline.symbols[mode]['lock']
+        self.network = Powerline.symbols[mode]['network']
+        self.separator = Powerline.symbols[mode]['separator']
+        self.separator_thin = Powerline.symbols[mode]['separator_thin']
+        self.segments = []
+        self.segmentnames = []
+        self.segment_functions = []
+        self.user = os.getenv('USER')
+        self.ret = 0
+        self.pid = 0
+        self.bashpid = 0
+        self.jobs = 0
+        self.hostname = socket.gethostname().split('.')[0]
+        self.ssh = False
+
+    def color(self, prefix, code):
+        return self.color_template % ('[%s;5;%sm' % (prefix, code))
+
+    def fgcolor(self, code):
+        return self.color('38', code)
+
+    def bgcolor(self, code):
+        return self.color('48', code)
+
+    def append(self, content, fg, bg, separator=None, separator_fg=None):
+        self.segments.append((content, fg, bg, separator or self.separator,
+            separator_fg or bg))
+
+    def draw(self):
+        self.segments = []
+        if VERBOSE == 1:
+            results = []
+            for f in self.segment_functions:
+                begin = datetime.datetime.now()
+                f()
+                d = datetime.datetime.now() - begin
+                results.append( d )
+            s = str( self.cwd.strip() )
+            for i,v in enumerate(results):
+                s = s + (self.segmentnames[i] + ": ").rjust(17) + str(v.microseconds).rjust(4) + "us"
+            logging.debug( s );
+        else:
+            [f() for f in self.segment_functions]
+
+        seg_arr = []
+        for i in range(len(self.segments)):
+            if i == len(self.segments)-2:
+                seg_arr.append(self.draw_segment(i, True))
+            else:
+                seg_arr.append(self.draw_segment(i))
+
+        seg_arr.insert(len(seg_arr)-1, "\n")
+        seg_arr.append(self.reset)
+
+        return "".join(seg_arr).encode('utf-8')
+
+    def register(self, func):
+        self.segment_functions.append( func )
+
+        if VERBOSE == 1:
+            self.segmentnames.append( func.__name__[ 4 : len(func.__name__) - 8 ].strip() )
+
+    def draw_segment(self, idx, selfreset = False):
+        segment = self.segments[idx]
+        next_segment = self.segments[idx + 1] if idx < len(self.segments)-1 else None
+        background_color = self.bgcolor(next_segment[2]) if next_segment else self.reset
+        if selfreset:
+            background_color = self.reset
+
+        return ''.join((
+            self.fgcolor(segment[1]),
+            self.bgcolor(segment[2]),
+            segment[0],
+            background_color,
+            self.fgcolor(segment[4]),
+            segment[3]))
+
+def get_valid_cwd():
+    """ We check if the current working directory is valid or not. Typically
+        happens when you checkout a different branch on git that doesn't have
+        this directory.
+        We return the original cwd because the shell still considers that to be
+        the working directory, so returning our guess will confuse people
+    """
+    try:
+        cwd = os.getcwd()
+    except:
+        cwd = os.getenv('PWD')  # This is where the OS thinks we are
+        parts = cwd.split(os.sep)
+        up = cwd
+        while parts and not os.path.exists(up):
+            parts.pop()
+            up = os.sep.join(parts)
+        try:
+            os.chdir(up)
+        except:
+            warn("Your current directory is invalid.")
+            sys.exit(1)
+        warn("Your current directory is invalid. Lowest valid directory: " + up)
+    return cwd
+
+
+if __name__ == "__main__":
+    arg_parser = argparse.ArgumentParser()
+    arg_parser.add_argument('--cwd-only', action='store_true',
+            help='Only show the current directory')
+    arg_parser.add_argument('--cwd-max-depth', action='store', type=int,
+            default=5, help='Maximum number of directories to show in path')
+    arg_parser.add_argument('--colorize-hostname', action='store_true',
+            help='Colorize the hostname based on a hash of itself.')
+    arg_parser.add_argument('--mode', action='store', default='patched',
+            help='The characters used to make separators between segments',
+            choices=['patched', 'compatible', 'flat'])
+    arg_parser.add_argument('--shell', action='store', default='bash',
+            help='Set this to your shell type', choices=['bash', 'zsh', 'bare'])
+    arg_parser.add_argument('prev_error', nargs='?', type=int, default=0,
+            help='Error code returned by the last command')
+    args = arg_parser.parse_args()
+
+    powerline = Powerline(args, get_valid_cwd())
