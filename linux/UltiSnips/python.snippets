@@ -19,7 +19,8 @@ lines = open(filename).read().splitlines()
 endsnippet
 
 snippet regex
-if re.match(regex, str):
+import re
+if re.search(regex, str, re.IGNORECASE|re.DOTALL):
 endsnippet
 
 snippet mongodb
@@ -116,5 +117,4 @@ class PetTest(unittest.TestCase):
 
 ./animals/__init__.py must exist
 endsnippet
-
 
