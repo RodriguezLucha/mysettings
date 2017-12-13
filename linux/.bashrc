@@ -21,6 +21,8 @@ if [ $HOSTNAME = "rudyspvm" ]; then
     export ALL_THE_PLUGINS=1
 elif [ $HOSTNAME = "RUDY-SURFACE" ]; then
     export ALL_THE_PLUGINS=1
+elif [ $HOSTNAME = "RUDYLM" ]; then
+    export ALL_THE_PLUGINS=1
 elif [ $HOSTNAME = "rudy-w8e" ]; then
     export ALL_THE_PLUGINS=1
 else

@@ -123,3 +123,19 @@ import os
 scriptdir = os.path.dirname(os.path.realpath(__file__))
 os.chdir(scriptdir)
 endsnippet
+
+snippet multithreading_queue
+from concurrent.futures import ProcessPoolExecutor
+import multiprocessing
+
+def Fib(n):
+    if n == 0: return 0
+    elif n == 1: return 1
+    else: return Fib(n - 1) + Fib(n - 2)
+
+input_queue = [36, 37, 38]
+pool = ProcessPoolExecutor(max_workers=multiprocessing.cpu_count())
+results = list(pool.map(Fib, input_queue))
+print(results)  #prints [14930352, 24157817, 39088169]
+endsnippet
+
