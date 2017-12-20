@@ -6,3 +6,4 @@
 * `ln -s mysettings/linux/scripts scripts`
 
 TODO: Make a setup script, update this
+Test commit to github
