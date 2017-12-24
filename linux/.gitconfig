@@ -18,11 +18,10 @@
     ir8 = rebase -i HEAD~8
     ir9 = rebase -i HEAD~9
     ir10 = rebase -i HEAD~10
-    squash-to = "!__git_squash_to() { cur_branch=$(git rev-parse --abbrev-ref HEAD"
     d = difftool
 [user]
     name = rudy
-    email = rudy@opswat.com
+    email = RodriguezLucha@gmail.com
 [diff]
     tool = vimdiff
 
