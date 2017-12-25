@@ -23,6 +23,8 @@
 # apt-cyg install cmake
 # apt-cyg install libevent-devel
 # apt-cyg install the_silver_searcher
+# apt-cyg install zip
+# apt-cyg install unzip
 
 # Clone various repos
 # git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
