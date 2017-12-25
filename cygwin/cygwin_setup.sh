@@ -89,3 +89,6 @@
 # Compile latest version of tmux
 # mysettings/linux/build_tmux.sh
 
+# Python modules
+# pip3 install stormssh
+# pip3 install pep8
