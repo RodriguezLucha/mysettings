@@ -1,23 +1,26 @@
 #!/bin/bash
 
 # Install all requirements
-apt update
-apt upgrade -y
-apt install openssh-server -y
-apt install build-essential -y
-apt install ncurses-dev -y
-apt install git -y
-apt install cmake -y
-apt install silversearcher-ag -y
-apt install libevent-dev -y
-apt install python-pip -y
-apt install python3-pip -y
-apt install htop -y
-apt install nethogs -y
-apt install python-dev -y
-apt install python3-dev -y
-apt install mongodb-server -y
-apt install autojump -y
+# apt update
+# apt upgrade -y
+# apt install openssh-server -y
+# apt install build-essential -y
+# apt install ncurses-dev -y
+# apt install git -y
+# apt install cmake -y
+# apt install silversearcher-ag -y
+# apt install libevent-dev -y
+# apt install python-pip -y
+# apt install python3-pip -y
+# apt install python3-setuptools -y
+# apt install python-setuptools -y
+# apt install htop -y
+# apt install nethogs -y
+# apt install python-dev -y
+# apt install python3-dev -y
+# apt install mongodb-server -y
+# apt install autojump -y
+# apt install g++ -y
 
 # Clone various repos
 # git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
@@ -41,7 +44,6 @@ apt install autojump -y
 # Softlink various config files
 # rm .tmux.conf
 # rm .bashrc
-# rm .minttyrc
 # rm .dir_colors
 # rm -rf scripts
 # rm powerline-shell-proxy/config.py
@@ -50,6 +52,7 @@ apt install autojump -y
 # rm .tmux/plugins/tmux-themepack/powerline/block/gray.tmuxtheme
 # 
 # ln -s mysettings/linux/.tmux.conf .tmux.conf
+# ln -s mysettings/linux/.vimrc .vimrc
 # ln -s mysettings/linux/.bashrc .bashrc
 # ln -s mysettings/linux/.minttyrc .minttyrc
 # ln -s mysettings/linux/scripts scripts
@@ -62,8 +65,8 @@ apt install autojump -y
 # Compile VIM with python3 support and async capabilities
 # TODO: Try neovim on linux
 # cd vim
-# ./configure --with-features=huge --enable-multibyte --enable-python3interp=yes --with-python3-config-dir=/usr/lib/python3.6/config-3.6m-x86_64-cygwin/ --prefix=/usr/local/
-# apt-cyg remove vim vim-common vim-minimal
+# ./configure --with-features=huge --enable-multibyte --enable-python3interp=yes --prefix=/usr/local/
+# apt remove vim vim-common vim-minimal
 # make VIMRUNTIMEDIR=/usr/local/share/vim/vim80
 # make install
 # cd ~
