@@ -1,9 +1,5 @@
-# Setup
+# Cygwin Setup
 
-* `git clone https://github.com/RodriguezLucha/mysettings`
-* `ln -s mysettings/linux/.vimrc .vimrc`
-* `ln -s mysettings/linux/.bashrc .bashrc`
-* `ln -s mysettings/linux/scripts scripts`
-
-TODO: Make a setup script, update this
-Test commit to github
+* Install Cygwin with lynx
+* `lynx -source rawgit.com/transcode-open/apt-cyg/master/apt-cyg > apt-cyg`
+* `install apt-cyg /bin`
