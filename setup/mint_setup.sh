@@ -83,3 +83,4 @@
 # Python modules
 # pip3 install stormssh
 # pip3 install pep8
+# pip3 install yapf
