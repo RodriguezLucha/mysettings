@@ -2,7 +2,7 @@ let all_the_plugins=$ALL_THE_PLUGINS
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
-set rtp+=~/vimsettings/linux
+set rtp+=~/mysettings/linux
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
@@ -69,7 +69,7 @@ let mapleader = "\<Space>"
 "
 "Snipping shortcut
 let g:UltiSnipsExpandTrigger="<C-f>"
-let g:UltiSnipsSnippetsDir="~/vimsettings/linux/UltiSnips/"
+let g:UltiSnipsSnippetsDir="~/mysettings/linux/UltiSnips/"
 
 "Syntastic
 set statusline+=%#warningmsg#
