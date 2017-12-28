@@ -25,6 +25,7 @@
 # apt-cyg install the_silver_searcher
 # apt-cyg install zip
 # apt-cyg install unzip
+# apt-cyg install ctags
 
 # Clone various repos
 # git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm

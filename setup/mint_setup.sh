@@ -21,6 +21,7 @@
 # apt install mongodb-server -y
 # apt install autojump -y
 # apt install g++ -y
+# apt install ctags -y
 
 # Clone various repos
 # git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
@@ -54,7 +55,7 @@
 # ln -s mysettings/linux/.tmux.conf .tmux.conf
 # ln -s mysettings/linux/.vimrc .vimrc
 # ln -s mysettings/linux/.bashrc .bashrc
-# ln -s mysettings/linux/.minttyrc .minttyrc
+# ln -s mysettings/linux/.zshrc .zshrc
 # ln -s mysettings/linux/scripts scripts
 # ln -s mysettings/linux/.dir_colors .
 # ln -s mysettings/linux/custom/powerline-shell-proxy/config.py powerline-shell-proxy/config.py
