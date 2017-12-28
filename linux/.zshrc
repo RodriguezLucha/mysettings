@@ -69,6 +69,7 @@ POWERLEVEL9K_SHOW_CHANGESET=true
 plugins=(
   git
   vi-mode
+  autojump
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -82,7 +83,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
+   export EDITOR='vim'
 # else
 #   export EDITOR='mvim'
 # fi
