@@ -26,6 +26,7 @@
 # apt-cyg install zip
 # apt-cyg install unzip
 # apt-cyg install ctags
+# apt-cyg install tidy
 
 # Clone various repos
 # git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
