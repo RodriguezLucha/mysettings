@@ -22,6 +22,7 @@
 # apt install autojump -y
 # apt install g++ -y
 # apt install ctags -y
+# apt install tidy -y
 
 # Clone various repos
 # git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
