@@ -50,5 +50,3 @@ PATH=~/scripts:$PATH
 set -o vi
 bind '"\t":menu-complete'
 bind -m vi-insert "\C-l":clear-screen
-
-[ -z "$TMUX"  ] && { tmux attach || exec tmux new-session && exit;}
