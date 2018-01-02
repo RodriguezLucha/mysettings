@@ -70,6 +70,7 @@ plugins=(
   git
   vi-mode
   autojump
+  django
 )
 
 source $ZSH/oh-my-zsh.sh
