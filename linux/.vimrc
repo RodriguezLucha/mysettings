@@ -41,6 +41,7 @@ Plugin 'SirVer/ultisnips'
 Plugin 'chiel92/vim-autoformat'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'valloric/youcompleteme'
+Plugin 'docunext/closetag.vim'
 
 if all_the_plugins == '1'
     Plugin 'davidhalter/jedi-vim'
