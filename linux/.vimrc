@@ -33,19 +33,19 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'majutsushi/tagbar'
 Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'breuckelen/vim-resize'
-Plugin 'maxbrunsfeld/vim-yankstack'
 Plugin 'mhinz/vim-hugefile'
 Plugin 'rhlobo/vim-super-retab'
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'honza/vim-snippets'
 Plugin 'SirVer/ultisnips'
+Plugin 'chiel92/vim-autoformat'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'valloric/youcompleteme'
 
 if all_the_plugins == '1'
     Plugin 'davidhalter/jedi-vim'
-    Plugin 'chiel92/vim-autoformat'
-    Plugin 'airblade/vim-gitgutter'
-    Plugin 'valloric/youcompleteme'
 endif
+
 call vundle#end()
 filetype plugin indent on
 
@@ -152,10 +152,6 @@ nnoremap <leader>c :CDC<CR>
 "Tagbar stuff
 nnoremap <leader>y :TagbarToggle<CR>
 
-"Yankstack
-nmap <C-up> <Plug>yankstack_substitute_older_paste
-nmap <C-down> <Plug>yankstack_substitute_newer_paste
-
 "Use relative line numbers
 nnoremap <leader>7 :let [&nu, &rnu] = [!&rnu, &nu+&rnu==1]<CR>nu
 nnoremap <leader>6 :set foldmethod=indent<CR>
@@ -173,10 +169,10 @@ command FlipH windo wincmd K
 command FlipV windo wincmd H
 
 "Easy navigation to next and previous difference
-if &diff
-    map dj ]c
-    map dk [c
-endif
+map <leader><up> [c
+map <leader><down> ]c
+map <leader><left> :diffget<CR>
+map <leader><right> :diffput<CR>
 
 "Print out full path of current file
 nnoremap <leader>1 :echo expand('%:p')

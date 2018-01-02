@@ -7,7 +7,21 @@ alias root="sudo su -m root"
 #Pretty colors for ls
 eval `dircolors ~/.dir_colors`
 
-export ALL_THE_PLUGINS=1
+if [ $HOSTNAME = "RUDY-SB" ]; then
+    export ALL_THE_PLUGINS=0
+    export CYGWIN=1
+else
+    export ALL_THE_PLUGINS=1
+    export CYGWIN=0
+fi
+
+#Clipboard host script
+if [ CYGWIN ]; then
+    if ! pgrep -f clipboard_host.py > /dev/null
+    then
+        python ~/scripts/clipboard_host.py > /dev/null 2>&1 &
+    fi
+fi
 
 #Powerline-shell-proxy
 if ! pgrep -f powerline-shell.py > /dev/null
