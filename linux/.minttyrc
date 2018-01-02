@@ -6,7 +6,7 @@ Font=DejaVuSansMono NF
 FontHeight=16
 FontWeight=400
 FontIsBold=no
-FontSmoothing=default
+FontSmoothing=full
 Scrollbar=none
 
 ForegroundColour=131,148,150
