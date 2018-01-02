@@ -86,3 +86,13 @@
 # pip3 install stormssh
 # pip3 install pep8
 # pip3 install yapf
+
+# Setup run root command without typing password everytime
+# root (preserve vim editor)
+# visudo
+# rudy    ALL=(ALL:ALL) NOPASSWD: ALL
+
+# Run host update script on startup
+# crontab -e
+# @reboot /home/rudy/scripts/dropbox.py start
+# @reboot FLASK_APP=/home/rudy/scripts/hosts_updater.py /usr/local/bin/flask run > /home/rudy/.cronlog.txt 2>&1

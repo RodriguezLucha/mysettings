@@ -69,7 +69,6 @@
 # cp mysettings/linux/custom/tmux_themes/gray.tmuxtheme .tmux/plugins/tmux-themepack/powerline/block/
 
 # Compile VIM with python3 support and async capabilities
-# TODO: Try neovim on linux
 # cd vim
 # ./configure --with-features=huge --enable-multibyte --enable-python3interp=yes --with-python3-config-dir=/usr/lib/python3.6/config-3.6m-x86_64-cygwin/ --prefix=/usr/local/
 # apt-cyg remove vim vim-common vim-minimal
@@ -95,3 +94,9 @@
 # pip3 install stormssh
 # pip3 install pep8
 # pip3 install yapf
+
+# Setup ssh server and cron service, need to run following as admin
+# ssh-host-config
+# ssh-user-config
+# cron-config
+
