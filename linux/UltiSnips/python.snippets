@@ -18,6 +18,11 @@ snippet readlines
 lines = open(filename).read().splitlines()
 endsnippet
 
+snippet writetext
+with open(filename, "w") as output_file:
+    output_file.write(str)
+endsnippet
+
 snippet regex
 import re
 if re.search(regex, str, re.IGNORECASE|re.DOTALL):
