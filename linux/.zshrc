@@ -112,7 +112,7 @@ alias cd..="cd .."
 alias l="ls --color --classify"
 alias python="python3"
 alias root="sudo su -m root"
-alias removestoppedcon="docker rm -v $(docker ps -aq -f status=exited)"
+drsc() { docker rm -v $(docker ps -aq -f status=exited); }
 export ALL_THE_PLUGINS=1
 PATH=~/scripts:$PATH
 export WORKON_HOME=$HOME/.virtualenvs
