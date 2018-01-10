@@ -86,6 +86,8 @@
 # pip3 install stormssh
 # pip3 install pep8
 # pip3 install yapf
+# pip3 install pymongo
+# pip3 install redis
 
 # Setup run root command without typing password everytime
 # root (preserve vim editor)

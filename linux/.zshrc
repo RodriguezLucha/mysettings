@@ -1,6 +1,8 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+PATH=~/.local/bin:$PATH
+
 # Path to your oh-my-zsh installation.
   export ZSH=/home/rudy/.oh-my-zsh
 
@@ -11,7 +13,7 @@
 ZSH_THEME="powerlevel9k/powerlevel9k"
 POWERLEVEL9K_MODE='nerdfont-complete'
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs newline root_indicator vi_mode)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(virtualenv)
 POWERLEVEL9K_VI_INSERT_MODE_STRING="➤"
 POWERLEVEL9K_VI_COMMAND_MODE_STRING="!"
 POWERLEVEL9K_SHOW_CHANGESET=true
@@ -68,8 +70,10 @@ POWERLEVEL9K_SHOW_CHANGESET=true
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
+  docker
   vi-mode
   autojump
+  virtualenvwrapper
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -106,7 +110,13 @@ source $ZSH/oh-my-zsh.sh
 eval `dircolors ~/.dir_colors`
 alias cd..="cd .."
 alias l="ls --color --classify"
+alias python="python3"
 alias root="sudo su -m root"
+alias removestoppedcon="docker rm -v $(docker ps -aq -f status=exited)"
 export ALL_THE_PLUGINS=1
 PATH=~/scripts:$PATH
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/Devel
+source /usr/local/bin/virtualenvwrapper.sh
 [ -z "$TMUX"  ] && { tmux attach || exec tmux new-session && exit;}
+
