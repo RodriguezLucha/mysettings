@@ -73,6 +73,7 @@ plugins=(
   docker
   vi-mode
   autojump
+  httpie
   virtualenvwrapper
 )
 
