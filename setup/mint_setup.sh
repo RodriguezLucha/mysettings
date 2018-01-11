@@ -23,6 +23,7 @@
 # apt install g++ -y
 # apt install ctags -y
 # apt install tidy -y
+# apt install ncdu -y
 # apt install dict dictd dict-gcide
 
 # Clone various repos
