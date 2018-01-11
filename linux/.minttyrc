@@ -3,10 +3,10 @@ CursorType=block
 Transparency=medium
 OpaqueWhenFocused=yes
 Font=DejaVuSansMono NF
-FontHeight=16
+FontHeight=14
 FontWeight=400
 FontIsBold=no
-FontSmoothing=full
+FontSmoothing=partial
 Scrollbar=none
 
 ForegroundColour=131,148,150
@@ -28,3 +28,4 @@ Cyan=42,161,152
 BoldCyan=147,161,161
 White=238,232,213
 BoldWhite=253,246,227
+ZoomShortcuts=no
