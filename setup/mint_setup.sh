@@ -23,6 +23,7 @@
 # apt install g++ -y
 # apt install ctags -y
 # apt install tidy -y
+# apt install dict dictd dict-gcide
 
 # Clone various repos
 # git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
