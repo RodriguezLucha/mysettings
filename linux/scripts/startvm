@@ -1,4 +1,2 @@
 #!/usr/bin/bash
-/cygdrive/c/Program\ Files/Oracle/VirtualBox/VBoxManage.exe startvm "Linux Mint"
-
-
+/cygdrive/c/Program\ Files/Oracle/VirtualBox/VBoxManage.exe startvm "Linux Mint" --type headless
