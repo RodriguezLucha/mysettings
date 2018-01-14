@@ -2,12 +2,8 @@
 import subprocess
 
 def run_cmd(cmd):
-    subprocess.call(cmd, shell=True)
+    return subprocess.check_output(cmd, stderr=subprocess.STDOUT, universal_newlines=True, shell=True)
 
-vmrun = r'/cygdrive/c/Program\ Files\ \(x86\)/VMware/VMware\ VIX/vmrun.exe'
-
-linux_mint_vmx = r'"C:\\Users\\rodri\\Documents\\Virtual Machines\\LinuxMint\\LinuxMint.vmx"'
-
-cmd = f"{vmrun} getGuestIPAddress {linux_mint_vmx}"
-
-run_cmd(cmd)
+vmrun = r'/cygdrive/c/Program\ Files/Oracle/VirtualBox/VBoxManage.exe guestproperty get "Linux Mint" /VirtualBox/GuestInfo/Net/0/V4/IP'
+output = run_cmd(vmrun)
+print(output.split()[1])
