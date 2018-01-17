@@ -120,7 +120,7 @@ export ALL_THE_PLUGINS=1
 PATH=~/scripts:$PATH
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Devel
-source /usr/local/bin/virtualenvwrapper.sh
+source ~/.local/bin/virtualenvwrapper.sh
 
 if [[ $EUID -ne 0 ]]; then
     [ -z "$TMUX"  ] && { tmux attach || exec tmux new-session && exit;}
