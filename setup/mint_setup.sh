@@ -90,6 +90,7 @@
 # pip3 install yapf
 # pip3 install pymongo
 # pip3 install redis
+# pip3 install ansible
 
 # Setup run root command without typing password everytime
 # root (preserve vim editor)
