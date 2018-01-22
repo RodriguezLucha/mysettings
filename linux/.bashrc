@@ -10,6 +10,7 @@ eval `dircolors ~/.dir_colors`
 if [ $HOSTNAME = "RUDY-SB" ]; then
     export ALL_THE_PLUGINS=0
     export CYGWIN=1
+    export VAGRANT_PREFER_SYSTEM_BIN=1
 else
     export ALL_THE_PLUGINS=1
     export CYGWIN=0

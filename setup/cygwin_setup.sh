@@ -94,6 +94,7 @@
 # pip3 install stormssh
 # pip3 install pep8
 # pip3 install yapf
+# pip3 install ansible
 
 # Setup ssh server and cron service, need to run following as admin
 # ssh-host-config
