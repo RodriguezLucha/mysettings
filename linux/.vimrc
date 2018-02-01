@@ -43,6 +43,9 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'valloric/youcompleteme'
 Plugin 'docunext/closetag.vim'
 Plugin 'othree/html5.vim'
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
+Plugin 'othree/csscomplete.vim'
 
 if all_the_plugins == '1'
     Plugin 'davidhalter/jedi-vim'
@@ -178,3 +181,8 @@ map <leader><right> :diffput<CR>
 
 "Print out full path of current file
 nnoremap <leader>1 :echo expand('%:p')
+let g:ycm_semantic_triggers = {
+    \   'css': [ 're!^\s{4}', 're!:\s+' ],
+    \ }
+
+let g:jsx_ext_required = 0
