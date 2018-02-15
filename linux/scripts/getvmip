@@ -4,6 +4,7 @@ import subprocess
 def run_cmd(cmd):
     return subprocess.check_output(cmd, stderr=subprocess.STDOUT, universal_newlines=True, shell=True)
 
-vmrun = r'/cygdrive/c/Program\ Files/Oracle/VirtualBox/VBoxManage.exe guestproperty get "Linux Mint" /VirtualBox/GuestInfo/Net/0/V4/IP'
+vmrun = '/cygdrive/c/Program\ Files/Oracle/VirtualBox/VBoxManage.exe'
+vmrun += ' guestproperty get "Linux Mint" /VirtualBox/GuestInfo/Net/0/V4/IP'
 output = run_cmd(vmrun)
 print(output.split()[1])

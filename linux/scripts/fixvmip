@@ -1,0 +1,41 @@
+#!/usr/bin/python3
+import subprocess
+import time
+import os
+import re
+
+password = os.environ['LMPASS']
+
+def run_cmd(cmd):
+    return subprocess.check_output(cmd, stderr=subprocess.STDOUT, universal_newlines=True, shell=True)
+
+vmrun = '/cygdrive/c/Program\ Files/Oracle/VirtualBox/VBoxManage.exe guestcontrol "Linux Mint" --username rudy --password {} run --exe /usr/bin/sudo -- sudo nmcli n off'.format(password)
+output = run_cmd(vmrun)
+
+time.sleep(1)
+
+vmrun = '/cygdrive/c/Program\ Files/Oracle/VirtualBox/VBoxManage.exe guestcontrol "Linux Mint" --username rudy --password {} run --exe /usr/bin/sudo -- sudo nmcli n on'.format(password)
+output = run_cmd(vmrun)
+
+vmrun = '/cygdrive/c/Program\ Files/Oracle/VirtualBox/VBoxManage.exe'
+vmrun += ' guestproperty get "Linux Mint" /VirtualBox/GuestInfo/Net/0/V4/IP'
+output = run_cmd(vmrun)
+print(output)
+rudysbvm_ip = output.split()[1]
+
+filename = "/cygdrive/c/Windows/System32/drivers/etc/hosts"
+
+ip = rudysbvm_ip
+hostname = "rudysbvm"
+old_lines = open(filename).read().splitlines()
+
+new_lines = [
+    "{} {}".format(ip, hostname)
+    if re.search(hostname, x, re.IGNORECASE) else x for x in old_lines
+]
+
+content = "\n".join(new_lines)
+
+with open(filename, "w") as text_file:
+    text_file.write(content)
+
