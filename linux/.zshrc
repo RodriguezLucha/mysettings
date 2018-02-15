@@ -111,7 +111,6 @@ source $ZSH/oh-my-zsh.sh
 eval `dircolors ~/.dir_colors`
 alias cd..="cd .."
 alias l="ls --color --classify"
-alias python="python3"
 alias root="sudo su -m root"
 drsc() { docker rm -v $(docker ps -aq -f status=exited); }
 alias ve2='f() { virtualenv $1 };f'

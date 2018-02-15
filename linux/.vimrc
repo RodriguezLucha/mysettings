@@ -17,7 +17,6 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'ervandew/supertab'
 Plugin 'tpope/vim-endwise'
 Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'terryma/vim-multiple-cursors'
 Plugin 'raimondi/delimitmate'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'dkprice/vim-easygrep'
@@ -46,6 +45,7 @@ Plugin 'othree/html5.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'othree/csscomplete.vim'
+Plugin 'gorodinskiy/vim-coloresque'
 
 if all_the_plugins == '1'
     Plugin 'davidhalter/jedi-vim'
@@ -186,3 +186,5 @@ let g:ycm_semantic_triggers = {
     \ }
 
 let g:jsx_ext_required = 0
+set clipboard=unnamedplus
+
