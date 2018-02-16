@@ -46,6 +46,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'othree/csscomplete.vim'
 Plugin 'gorodinskiy/vim-coloresque'
+Plugin 'ekalinin/Dockerfile.vim'
 
 if all_the_plugins == '1'
     Plugin 'davidhalter/jedi-vim'
