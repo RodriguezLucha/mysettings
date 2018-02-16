@@ -29,4 +29,4 @@ def update_hosts():
     return content
 
 
-app.run(host='0.0.0.0')
+app.run(host='0.0.0.0', port=5333)
