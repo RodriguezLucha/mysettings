@@ -181,7 +181,7 @@ map <leader><left> :diffget<CR>
 map <leader><right> :diffput<CR>
 
 "Print out full path of current file
-nnoremap <leader>1 :echo expand('%:p')
+nnoremap <leader>1 :echo expand('%:p')<CR>
 let g:ycm_semantic_triggers = {
     \   'css': [ 're!^\s{4}', 're!:\s+' ],
     \ }

@@ -1,2 +1,4 @@
 #!/bin/bash
-find . -iname "*$1*"
+#find . -iname "*$1*"
+#This will ignore all hidden directories and files
+find . \( ! -regex '.*/\..*' \) -type f -iname "*$1*"

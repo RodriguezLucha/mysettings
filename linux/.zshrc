@@ -12,11 +12,12 @@ PATH=~/.local/bin:$PATH
 #ZSH_THEME="robbyrussell"
 ZSH_THEME="powerlevel9k/powerlevel9k"
 POWERLEVEL9K_MODE='nerdfont-complete'
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs newline root_indicator vi_mode)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(virtualenv)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs newline virtualenv root_indicator vi_mode)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
 POWERLEVEL9K_VI_INSERT_MODE_STRING="➤"
 POWERLEVEL9K_VI_COMMAND_MODE_STRING="!"
 POWERLEVEL9K_SHOW_CHANGESET=true
+POWERLEVEL9K_VIRTUALENV_BACKGROUND=green
 
 
 # Set list of themes to load
@@ -113,8 +114,8 @@ alias cd..="cd .."
 alias l="ls --color --classify"
 alias root="sudo su -m root"
 drsc() { docker rm -v $(docker ps -aq -f status=exited); }
-alias ve2='f() { virtualenv $1 };f'
-alias ve3='f() { virtualenv -p python3 $1 };f'
+alias ve2='f() { virtualenv .venv };f'
+alias ve3='f() { virtualenv -p python3 .venv };f'
 alias ve="cd `pwd`"
 export ALL_THE_PLUGINS=1
 PATH=~/scripts:$PATH

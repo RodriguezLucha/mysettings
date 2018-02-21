@@ -78,8 +78,10 @@
 # Install all VIM Plugins
 # vim -c 'PluginInstall' -c 'qa!'
 
+# Latest version of node and npm
+
 #YouCompleteMe
-# .vim/bundle/youcompleteme/install.py
+# .vim/bundle/youcompleteme/install.py --js-completer
 
 # Compile latest version of tmux
 # mysettings/linux/build_tmux.sh
@@ -101,3 +103,10 @@
 # crontab -e
 # @reboot /home/rudy/scripts/dropbox.py start
 # @reboot FLASK_APP=/home/rudy/scripts/hosts_updater.py /usr/local/bin/flask run > /home/rudy/.cronlog.txt 2>&1
+
+
+# Latest version of node.js
+# npm install -g js-beautify
+# npm install -g git+https://github.com/ramitos/jsctags.git
+# npm install -g xreader/git-for-humans
+
