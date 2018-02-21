@@ -25,6 +25,7 @@
 # apt install tidy -y
 # apt install ncdu -y
 # apt install dict dictd dict-gcide
+# apt install stress
 
 # Clone various repos
 # git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
