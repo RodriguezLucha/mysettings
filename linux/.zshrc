@@ -72,6 +72,7 @@ POWERLEVEL9K_VIRTUALENV_BACKGROUND=green
 plugins=(
   git
   docker
+  docker-compose
   vi-mode
   autojump
   httpie
