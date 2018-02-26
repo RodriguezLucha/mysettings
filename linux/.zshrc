@@ -123,6 +123,7 @@ PATH=~/scripts:$PATH
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Devel
 source ~/.local/bin/virtualenvwrapper.sh
+ve
 
 if [[ $EUID -ne 0 ]]; then
     [ -z "$TMUX"  ] && { tmux attach || exec tmux new-session && exit;}
