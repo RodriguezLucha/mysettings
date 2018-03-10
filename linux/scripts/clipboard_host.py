@@ -16,12 +16,12 @@ def update_clipboard():
     """
     get posted data into /dev/clipboard
     """
-    text = request.data
+    text = request.data.decode('utf-8')
 
     temp_file = "/home/rodri/.clip.txt"
 
     with open(temp_file, "w") as text_file:
-        text_file.write(text.decode("utf-8"))
+        text_file.write(text.encode("utf-16"))
 
     cmd = "clip.exe < {}".format(temp_file)
     run_cmd(cmd)
