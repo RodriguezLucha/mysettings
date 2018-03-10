@@ -112,7 +112,7 @@ source $ZSH/oh-my-zsh.sh
 #
 eval `dircolors ~/.dir_colors`
 alias cd..="cd .."
-alias l="ls --color --classify"
+alias l="ls --color --classify --hide='*.pyc'"
 alias root="sudo su -m root"
 drsc() { docker rm -v $(docker ps -aq -f status=exited); }
 alias ve2='f() { virtualenv .venv };f'
@@ -122,6 +122,7 @@ export ALL_THE_PLUGINS=1
 PATH=~/scripts:$PATH
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Devel
+export APP_ENV=prod
 source ~/.local/bin/virtualenvwrapper.sh
 ve
 

@@ -1,4 +1,6 @@
-.tags
+.tag*
 *.swp
 .pytest_cache
 .venv
+.pyc
+

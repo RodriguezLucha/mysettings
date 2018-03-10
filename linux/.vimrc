@@ -47,6 +47,7 @@ Plugin 'mxw/vim-jsx'
 Plugin 'othree/csscomplete.vim'
 Plugin 'gorodinskiy/vim-coloresque'
 Plugin 'ekalinin/Dockerfile.vim'
+Plugin 'DirDiff.vim'
 
 if all_the_plugins == '1'
     Plugin 'davidhalter/jedi-vim'
@@ -135,6 +136,7 @@ let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 let NERDTreeShowLineNumbers = 1
 let NERDTreeShowBookmarks = 1
+let NERDTreeIgnore = ['\.pyc$']
 
 "Toggle quickfix windows
 let g:lt_quickfix_list_toggle_map = '<leader>q'
