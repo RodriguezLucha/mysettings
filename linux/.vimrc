@@ -189,5 +189,4 @@ let g:ycm_semantic_triggers = {
     \ }
 
 let g:jsx_ext_required = 0
-set clipboard=unnamedplus
 
