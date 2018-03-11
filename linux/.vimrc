@@ -67,6 +67,9 @@ set softtabstop=4
 set tw=0
 set expandtab
 
+autocmd Filetype html setlocal ts=2 sw=2 sts=2 expandtab
+autocmd Filetype javascript setlocal ts=2 sw=2 sts=2 expandtab
+
 "Easy scrolling
 noremap <C-left> zh
 noremap <C-right> zl
