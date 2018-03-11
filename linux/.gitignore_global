@@ -2,5 +2,4 @@
 *.swp
 .pytest_cache
 .venv
-.pyc
-
+**.pyc

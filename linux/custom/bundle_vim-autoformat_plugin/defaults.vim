@@ -276,7 +276,7 @@ endif
 
 " HTML
 if !exists('g:formatdef_htmlbeautify')
-    let g:formatdef_htmlbeautify = '"html-beautify -f - -".(&expandtab ? "s ".shiftwidth() : "t")'
+    let g:formatdef_htmlbeautify = '"html-beautify -f - --config ~/.htmlbeautifyrc"'
 endif
 
 if !exists('g:formatdef_tidy_html')
