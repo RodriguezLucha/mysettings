@@ -21,10 +21,11 @@ def update_clipboard():
     temp_file = "/home/rodri/.clip.txt"
 
     with open(temp_file, "w") as text_file:
-        text_file.write(text.encode("utf-16"))
+        text_file.write(text.encode("ascii", errors='ignore'))
 
     cmd = "clip.exe < {}".format(temp_file)
     run_cmd(cmd)
+
 
     return text
 
