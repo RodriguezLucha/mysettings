@@ -64,8 +64,9 @@ set nowrap
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
-set tw=0
+set tw=120
 set expandtab
+execute "set colorcolumn=" . join(range(121,335), ',')
 
 autocmd Filetype html setlocal ts=2 sw=2 sts=2 expandtab
 autocmd Filetype javascript setlocal ts=2 sw=2 sts=2 expandtab
@@ -193,3 +194,4 @@ let g:ycm_semantic_triggers = {
 
 let g:jsx_ext_required = 0
 
+map <leader>gs :Gstatus<CR>
