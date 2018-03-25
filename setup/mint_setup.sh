@@ -94,6 +94,7 @@
 # pip3 install pymongo
 # pip3 install redis
 # pip3 install ansible
+# pip install termdown
 
 # Setup run root command without typing password everytime
 # root (preserve vim editor)
@@ -110,4 +111,10 @@
 # npm install -g js-beautify
 # npm install -g git+https://github.com/ramitos/jsctags.git
 # npm install -g xreader/git-for-humans
+
+#misc programs
+# toggl cli
+# thyme for tracking pomodoros
+# toggl cli from node compiled with pull request for project support
+
 
