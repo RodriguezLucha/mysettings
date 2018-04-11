@@ -4,7 +4,7 @@
 PATH=~/.local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/rudy/.oh-my-zsh
+export ZSH=/home/rudy/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -70,13 +70,13 @@ POWERLEVEL9K_VIRTUALENV_BACKGROUND=green
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git
-  docker
-  docker-compose
-  vi-mode
-  autojump
-  httpie
-  virtualenvwrapper
+git
+docker
+docker-compose
+vi-mode
+autojump
+httpie
+virtualenvwrapper
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -90,7 +90,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
-   export EDITOR='vim'
+export EDITOR='vim'
 # else
 #   export EDITOR='mvim'
 # fi
@@ -123,8 +123,18 @@ PATH=~/scripts:$PATH
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Devel
 export APP_ENV=prod
+export GOPATH=~/go
 source ~/.local/bin/virtualenvwrapper.sh
 ve
+
+function exec_run_command()
+{
+    run_it.sh
+    zle accept-line
+}
+zle -N exec_run_command
+bindkey "^O" exec_run_command
+
 
 if [[ $EUID -ne 0 ]]; then
     [ -z "$TMUX"  ] && { tmux attach || exec tmux new-session && exit;}
