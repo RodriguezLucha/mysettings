@@ -129,7 +129,7 @@ ve
 
 function exec_run_command()
 {
-    run_it.sh
+    ./run
     zle accept-line
 }
 zle -N exec_run_command
