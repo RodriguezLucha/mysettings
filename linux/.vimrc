@@ -64,9 +64,8 @@ set nowrap
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
-set tw=120
 set expandtab
-execute "set colorcolumn=" . join(range(121,335), ',')
+execute "set colorcolumn=" . join(range(80,335), ',')
 
 autocmd Filetype html setlocal ts=2 sw=2 sts=2 expandtab
 autocmd Filetype javascript setlocal ts=2 sw=2 sts=2 expandtab
@@ -126,7 +125,7 @@ noremap <F3> :Autoformat<CR>
 
 "Folding automatically
 set foldmethod=indent
-set foldlevel=3
+set foldlevel=5
 
 "Quick save
 nnoremap <leader>s :update<CR>
@@ -189,8 +188,8 @@ map <leader><right> :diffput<CR>
 "Print out full path of current file
 nnoremap <leader>1 :echo expand('%:p')<CR>
 let g:ycm_semantic_triggers = {
-    \   'css': [ 're!^\s{4}', 're!:\s+' ],
-    \ }
+            \   'css': [ 're!^\s{4}', 're!:\s+' ],
+            \ }
 
 let g:jsx_ext_required = 0
 
