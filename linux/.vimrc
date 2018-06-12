@@ -48,6 +48,9 @@ Plugin 'othree/csscomplete.vim'
 Plugin 'gorodinskiy/vim-coloresque'
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'DirDiff.vim'
+Plugin 'gcmt/taboo.vim' ":TabooRename <name>
+Plugin 'xolox/vim-session'
+Plugin 'xolox/vim-misc'
 
 if all_the_plugins == '1'
     Plugin 'davidhalter/jedi-vim'
@@ -65,6 +68,8 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set expandtab
+set splitbelow
+set splitright
 execute "set colorcolumn=" . join(range(80,335), ',')
 
 autocmd Filetype html setlocal ts=2 sw=2 sts=2 expandtab
@@ -110,10 +115,11 @@ let g:gutentags_ctags_tagfile=".tags"
 "Need to set this for airline
 set laststatus=2
 let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 0
+let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline_theme='solarized'
 let g:airline_solarized_bg='dark'
-let g:airline_section_c = '%{hostname()}'
+let g:airline_section_c = '%t'
 
 " CDC = Change to Directory of Current file
 command CDC cd %:p:h
@@ -194,3 +200,8 @@ let g:ycm_semantic_triggers = {
 let g:jsx_ext_required = 0
 
 map <leader>gs :Gstatus<CR>
+
+"Sessions, :SaveSession <name>, :OpenSession <name>
+let g:session_autosave = 'no'
+set sessionoptions+=tabpages,globals
+let g:session_persist_globals = ['&sessionoptions']
