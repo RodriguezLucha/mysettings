@@ -17,6 +17,33 @@
     ],
     "rules": {
         "indent": ["error", 2],
-        "no-trailing-spaces": "error"
+        "no-trailing-spaces": "error",
+        "no-var": "error",
+        "no-multiple-empty-lines": "error",
+        "operator-linebreak": ["error", "before"],
+        "padded-blocks": ["error", "never"],
+        "quotes": ["error", "single"],
+        "semi": "error",
+        "quote-props": ["error", "as-needed"],
+        "arrow-body-style": "error",
+        "prefer-arrow-callback": "error",
+        "prefer-template": "error",
+        "array-bracket-spacing": "error",
+        "comma-spacing": "error",
+        "object-curly-spacing": "error",
+        "semi-spacing":"error",
+        "space-in-parens":"error",
+        "space-infix-ops":"error",
+        "brace-style": ["error",
+            "1tbs",
+            {
+                "allowSingleLine": true
+            }
+        ],
+        "sort-imports": ["error", {
+            "ignoreCase": false,
+            "ignoreMemberSort": false,
+            "memberSyntaxSortOrder": ["none", "all", "multiple", "single"]
+        }]
     }
 }
