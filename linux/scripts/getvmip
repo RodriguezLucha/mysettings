@@ -1,10 +1,17 @@
 #!/usr/bin/python3
 import subprocess
 
+
 def run_cmd(cmd):
     return subprocess.check_output(cmd, stderr=subprocess.STDOUT, universal_newlines=True, shell=True)
 
+#Get something like 192.168.1.64, not local only IP address like 172.x.x.x
 vmrun = '/cygdrive/c/Program\ Files/Oracle/VirtualBox/VBoxManage.exe'
-vmrun += ' guestproperty get "Linux Mint" /VirtualBox/GuestInfo/Net/0/V4/IP'
-output = run_cmd(vmrun)
-print(output.split()[1])
+vmrun += ' guestproperty enumerate "Linux Mint" | grep IP '
+vmrun += '| grep -o "value: [0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}" '
+vmrun += '| grep -v 172.18'
+vmrun += '| grep -v 172.17'
+vmrun += '| grep -o "[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}"'
+
+output = run_cmd(vmrun).rstrip()
+print(output)
