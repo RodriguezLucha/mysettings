@@ -44,6 +44,7 @@ Plugin 'docunext/closetag.vim'
 Plugin 'othree/html5.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
+Plugin 'justinj/vim-react-snippets'
 Plugin 'othree/csscomplete.vim'
 Plugin 'gorodinskiy/vim-coloresque'
 Plugin 'ekalinin/Dockerfile.vim'
@@ -131,7 +132,7 @@ noremap <F3> :Autoformat<CR>
 
 "Folding automatically
 set foldmethod=indent
-set foldlevel=5
+set foldlevel=7
 
 "Quick save
 nnoremap <leader>s :update<CR>
