@@ -19,7 +19,7 @@ vmrun = '/cygdrive/c/Program\ Files/Oracle/VirtualBox/VBoxManage.exe guestcontro
 output = run_cmd(vmrun)
 
 #Give it a few second to actually get the new IP
-sleep(5)
+sleep(10)
 
 vmrun = '/cygdrive/c/Program\ Files/Oracle/VirtualBox/VBoxManage.exe'
 vmrun += ' guestproperty enumerate "Linux Mint" | grep IP '

@@ -10,6 +10,13 @@ def run_cmd(cmd):
     return subprocess.check_output(
         cmd, stderr=subprocess.STDOUT, universal_newlines=True, shell=True)
 
+@app.route('/', methods=["GET"])
+def server_running_test():
+    """
+    Test to make sure server is up and running
+    """
+
+    return "The quick brown fox jumps over the lazy dog"
 
 @app.route('/', methods=["POST"])
 def update_clipboard():
