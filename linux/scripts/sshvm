@@ -1,7 +1,6 @@
 #!/bin/bash
-if [ CYGWIN ]; then
+if [ $HOSTNAME = "RUDY-SB" ]; then
     ssh vm
 else
-    echo "Not on cygwin!"
+    echo "Not on RUDY-SB!"
 fi
-#ssh vm
