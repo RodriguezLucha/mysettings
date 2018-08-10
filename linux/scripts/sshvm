@@ -1,2 +1,7 @@
 #!/bin/bash
-ssh vm
+if [ CYGWIN ]; then
+    ssh vm
+else
+    echo "Not on cygwin!"
+fi
+#ssh vm
