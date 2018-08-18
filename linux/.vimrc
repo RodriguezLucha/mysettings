@@ -52,6 +52,14 @@ Plugin 'DirDiff.vim'
 Plugin 'gcmt/taboo.vim' ":TabooRename <name>
 Plugin 'xolox/vim-session'
 Plugin 'xolox/vim-misc'
+Plugin 'argtextobj.vim'
+Plugin 'kana/vim-textobj-user'
+Plugin 'bps/vim-textobj-python'
+Plugin 'michaeljsmith/vim-indent-object'
+Plugin 'aykamko/vim-easymotion-segments'
+Plugin 'Julian/vim-textobj-variable-segment'
+Plugin 'bkad/camelcasemotion'
+
 
 if all_the_plugins == '1'
     Plugin 'davidhalter/jedi-vim'
@@ -72,6 +80,7 @@ set expandtab
 set splitbelow
 set splitright
 execute "set colorcolumn=" . join(range(80,335), ',')
+
 
 autocmd Filetype html setlocal ts=2 sw=2 sts=2 expandtab
 autocmd Filetype javascript setlocal ts=2 sw=2 sts=2 expandtab
@@ -206,3 +215,6 @@ map <leader>gs :Gstatus<CR>
 let g:session_autosave = 'no'
 set sessionoptions+=tabpages,globals
 let g:session_persist_globals = ['&sessionoptions']
+
+map w <Plug>CamelCaseMotion_w
+map b <Plug>CamelCaseMotion_b
