@@ -198,8 +198,6 @@ command FlipV windo wincmd H
 "Easy navigation to next and previous difference
 map <leader><up> [c
 map <leader><down> ]c
-map <leader><left> :diffget<CR>
-map <leader><right> :diffput<CR>
 
 "Print out full path of current file
 nnoremap <leader>1 :echo expand('%:p')<CR>
@@ -216,5 +214,5 @@ let g:session_autosave = 'no'
 set sessionoptions+=tabpages,globals
 let g:session_persist_globals = ['&sessionoptions']
 
-map w <Plug>CamelCaseMotion_w
-map b <Plug>CamelCaseMotion_b
+map <leader><right> <Plug>CamelCaseMotion_w
+map <leader><left> <Plug>CamelCaseMotion_b
