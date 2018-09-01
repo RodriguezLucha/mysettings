@@ -59,6 +59,7 @@ Plugin 'michaeljsmith/vim-indent-object'
 Plugin 'aykamko/vim-easymotion-segments'
 Plugin 'Julian/vim-textobj-variable-segment'
 Plugin 'bkad/camelcasemotion'
+Plugin 'wellle/targets.vim'
 
 
 if all_the_plugins == '1'

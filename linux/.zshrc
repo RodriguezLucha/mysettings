@@ -19,7 +19,6 @@ POWERLEVEL9K_VI_COMMAND_MODE_STRING="!"
 POWERLEVEL9K_SHOW_CHANGESET=true
 POWERLEVEL9K_VIRTUALENV_BACKGROUND=green
 
-
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
 # cause zsh load theme from this variable instead of
@@ -129,7 +128,7 @@ ve
 
 function exec_run_command()
 {
-    ./run
+    zle up-line-or-history
     zle accept-line
 }
 zle -N exec_run_command
