@@ -7,6 +7,8 @@ elif [ $1 = 'prod' ]; then
     HOSTS="gateprodmas gateproddev gateprodacc sarumanprod shelobprod usprodmas usproddev vprod"
 elif [ $1 = 'test' ]; then
     HOSTS="elastic gatetest sarumantest shelobtest ustest vtest"
+elif [ $1 = 'kubs' ]; then
+    HOSTS="kub1 kub2 kub3 kub4"
 elif [ $1 = 'rudyspvm' ]; then
     HOSTS="rudyspvm rudyspvm"
 else

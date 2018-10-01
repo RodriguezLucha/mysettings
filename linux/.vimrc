@@ -138,6 +138,7 @@ command CDC cd %:p:h
 "Quick format source
 com! FormatXML %!xmllint --format -
 com! FormatJSON %!jq .
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 noremap <F3> :Autoformat<CR>
 
 "Folding automatically
