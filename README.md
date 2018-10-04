@@ -1,1 +1,2 @@
-# Linix dev config settings. Workson Ubuntu, Mint, OSX, WSL, Cygwin
+# Linix shell settings 
+Ubuntu, Mint, OSX, WSL, Cygwin
