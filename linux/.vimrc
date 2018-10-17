@@ -60,6 +60,7 @@ Plugin 'aykamko/vim-easymotion-segments'
 Plugin 'Julian/vim-textobj-variable-segment'
 Plugin 'bkad/camelcasemotion'
 Plugin 'wellle/targets.vim'
+Plugin '907th/vim-auto-save'
 
 
 if all_the_plugins == '1'
@@ -218,3 +219,5 @@ let g:session_persist_globals = ['&sessionoptions']
 
 map <leader><right> <Plug>CamelCaseMotion_w
 map <leader><left> <Plug>CamelCaseMotion_b
+
+let g:auto_save = 1  " enable AutoSave on Vim startup
