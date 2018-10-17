@@ -1,0 +1,23 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+    config.vm.box = "ubuntu/xenial64"
+    config.vm.network "forwarded_port", host: 26000, guest: 6000
+    config.vm.network "forwarded_port", host: 23306, guest: 3306
+    config.vm.network "forwarded_port", host: 2224, guest: 22, host_ip: "127.0.0.1"
+    config.vm.network "forwarded_port", host: 28000, guest: 8000
+    config.vm.network "forwarded_port", host: 23000, guest: 3000
+    config.vm.network "forwarded_port", host: 23001, guest: 3001
+    config.vm.network "forwarded_port", host: 23002, guest: 3002
+
+    config.vm.provider "virtualbox" do |vb|
+        vb.memory = 5000
+        vb.cpus = 3
+        vb.name = "dev_environment"
+    end
+
+    config.vm.provision "ansible_local" do |ansible|
+        ansible.playbook = "playbook.yml"
+    end
+end

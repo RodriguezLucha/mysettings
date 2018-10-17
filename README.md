@@ -1,5 +1,2 @@
-# Cygwin Setup
-
-* Install Cygwin with lynx
-* `lynx -source rawgit.com/transcode-open/apt-cyg/master/apt-cyg > apt-cyg`
-* `install apt-cyg /bin`
+# Linix shell settings 
+Ubuntu, Mint, OSX, WSL, Cygwin

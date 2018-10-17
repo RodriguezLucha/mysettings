@@ -1,0 +1,61 @@
+- hosts: all
+  become: yes
+  become_user: root
+  become_method: sudo
+  tasks:
+
+    - name: Make sure we have a 'wheel' group
+      group:
+        name: wheel
+        state: present
+
+    - name: Allow 'wheel' group to have passwordless sudo
+      lineinfile:
+        dest: /etc/sudoers
+        state: present
+        regexp: '^%wheel'
+        line: '%wheel ALL=(ALL) NOPASSWD: ALL'
+        validate: 'visudo -cf %s'
+
+
+    - name: Add sudoers users to wheel group
+      user: name=rudy groups=wheel append=yes state=present createhome=yes
+        shell: /bin/zsh
+
+
+    - name: Set up authorized keys for the deployer user
+      authorized_key: user=rudy key="{{item}}"
+      with_file:
+        - id_rsa.pub
+
+    - name: Install a list of packages
+      apt:
+        name: "{{ packages }}"
+      vars:
+        packages:
+          - build-essential
+          - ncurses-dev
+          - git
+          - cmake
+          - silversearcher-ag
+          - libevent-dev
+          - python-pip
+          - python3-pip
+          - python3-setuptools
+          - python-setuptools
+          - htop
+          - nethogs
+          - python3-dev
+          - mongodb-server
+          - autojump
+          - g++
+          - ctags
+          - tidy
+          - ncdu
+          - dict
+          - dictd
+          - dict-gcide
+          - stress
+          - zsh
+
+
