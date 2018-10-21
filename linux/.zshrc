@@ -35,7 +35,7 @@ export EDITOR='vim'
 eval `dircolors ~/.dir_colors`
 
 alias cd..="cd .."
-alias l="ls --color --classify --hide='*.pyc'"
+alias l="ls --color --classify --hide='*.pyc' --hide='__pycache__'"
 alias root="sudo su -m root"
 alias automocha="supervisor -q -n exit -x mocha -- -b"
 drsc() { docker rm -v $(docker ps -aq -f status=exited); }
