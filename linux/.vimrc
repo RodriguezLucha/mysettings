@@ -158,7 +158,7 @@ let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 let NERDTreeShowLineNumbers = 1
 let NERDTreeShowBookmarks = 1
-let NERDTreeIgnore = ['\.pyc$']
+let NERDTreeIgnore = ['\.pyc$', '__pycache__']
 
 "Toggle quickfix windows
 let g:lt_quickfix_list_toggle_map = '<leader>q'
