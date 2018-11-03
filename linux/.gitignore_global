@@ -3,4 +3,5 @@
 .pytest_cache
 .venv
 **.pyc
+.DS_Store
 run

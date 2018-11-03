@@ -1,6 +1,5 @@
 PATH=~/.local/bin:$PATH
-export PATH=/usr/local/bin:$PATH
-export ZSH=/Users/rodolforodriguez/.oh-my-zsh
+export ZSH=/Users/rudy/.oh-my-zsh
 
 ZSH_THEME="powerlevel9k/powerlevel9k"
 POWERLEVEL9K_MODE='nerdfont-complete'
@@ -11,21 +10,19 @@ POWERLEVEL9K_VI_COMMAND_MODE_STRING="!"
 POWERLEVEL9K_SHOW_CHANGESET=true
 POWERLEVEL9K_VIRTUALENV_BACKGROUND=green
 
-
 plugins=(
     git
+    docker
+    docker-compose
     vi-mode
     autojump
     httpie
     virtualenvwrapper
-    docker
-    docker-compose
+    django
 )
 
 source $ZSH/oh-my-zsh.sh
 export EDITOR='vim'
-
-#eval `dircolors ~/.dir_colors`
 
 alias cd..="cd .."
 alias l="gls --color --classify --hide='*.pyc' --hide='__pycache__'"
@@ -52,7 +49,7 @@ zle -N exec_run_command
 bindkey "^O" exec_run_command
 
 
-#if [[ $EUID -ne 0 ]]; then
-    #[ -z "$TMUX"  ] && { tmux attach || exec tmux new-session && exit;}
-#fi
+if [[ $EUID -ne 0 ]]; then
+    [ -z "$TMUX"  ] && { tmux attach || exec tmux new-session && exit;}
+fi
 
