@@ -232,7 +232,6 @@ nnoremap <leader>S :if exists("g:syntax_on")    <Bar>
             \           syntax enable           <Bar>
             \       endif                           <CR>
             \ :set spell! spelllang=en_us           <CR>
-            \ :hi SpellBad ctermfg=015 ctermbg=000  <CR>
 
 autocmd FileType markdown setlocal spell
 autocmd FileType gitcommit setlocal spell
