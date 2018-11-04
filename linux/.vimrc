@@ -109,6 +109,10 @@ set termencoding=utf8
 set term=xterm
 set t_Co=256
 
+
+autocmd ColorScheme * hi clear SpellBad
+    \| hi SpellBad cterm=underline,bold ctermfg=white ctermbg=black
+
 set background=dark
 let g:solarized_diffmode="high"
 colorscheme solarized
@@ -222,7 +226,7 @@ map <leader><left> <Plug>CamelCaseMotion_b
 let g:auto_save = 1  " enable AutoSave on Vim startup
 
 "Spell check
-nnoremap <leader>s :if exists("g:syntax_on")    <Bar>
+nnoremap <leader>S :if exists("g:syntax_on")    <Bar>
             \           syntax off              <Bar>
             \       else                        <Bar>
             \           syntax enable           <Bar>
@@ -232,4 +236,3 @@ nnoremap <leader>s :if exists("g:syntax_on")    <Bar>
 
 autocmd FileType markdown setlocal spell
 autocmd FileType gitcommit setlocal spell
-hi SpellBad ctermfg=015 ctermbg=000
