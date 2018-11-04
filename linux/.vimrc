@@ -62,7 +62,6 @@ Plugin 'bkad/camelcasemotion'
 Plugin 'wellle/targets.vim'
 Plugin '907th/vim-auto-save'
 
-
 if all_the_plugins == '1'
     Plugin 'davidhalter/jedi-vim'
 endif
@@ -221,3 +220,15 @@ map <leader><right> <Plug>CamelCaseMotion_w
 map <leader><left> <Plug>CamelCaseMotion_b
 
 let g:auto_save = 1  " enable AutoSave on Vim startup
+
+"Spell check
+nnoremap <leader>s :if exists("g:syntax_on")    <Bar>
+            \           syntax off              <Bar>
+            \       else                        <Bar>
+            \           syntax enable           <Bar>
+            \       endif                           <CR>
+            \ :set spell! spelllang=en_us           <CR>
+            \ :hi SpellBad ctermfg=015 ctermbg=000  <CR>
+
+autocmd FileType markdown setlocal spell
+autocmd FileType gitcommit setlocal spell
