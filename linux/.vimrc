@@ -232,3 +232,4 @@ nnoremap <leader>s :if exists("g:syntax_on")    <Bar>
 
 autocmd FileType markdown setlocal spell
 autocmd FileType gitcommit setlocal spell
+hi SpellBad ctermfg=015 ctermbg=000
