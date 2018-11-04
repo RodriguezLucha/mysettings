@@ -26,6 +26,7 @@ export EDITOR='vim'
 
 alias cd..="cd .."
 alias l="gls --color --classify --hide='*.pyc' --hide='__pycache__'"
+alias ls="gls --color --classify --hide='*.pyc' --hide='__pycache__'"
 alias root="sudo su -m root"
 alias automocha="supervisor -q -n exit -x mocha -- -b"
 drsc() { docker rm -v $(docker ps -aq -f status=exited); }
