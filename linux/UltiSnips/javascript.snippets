@@ -23,10 +23,18 @@ async function readLines() {
 readLines();
 endsnippet
 
-#snippet writetext
-#with open(filename, "w") as output_file:
-    #output_file.write(str)
-#endsnippet
+snippet writetext
+const fs = require('fs');
+const util = require('util');
+const appendFile = util.promisify(fs.appendFile);
+
+async function readText(data) {
+    await appendFile('./file_out.txt', data);
+}
+
+let string = 'The quick brown fox jumps over the lazy dog\n';
+readText(string);
+endsnippet
 
 #snippet regex
 #import re
