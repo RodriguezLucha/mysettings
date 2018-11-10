@@ -36,10 +36,11 @@ let string = 'The quick brown fox jumps over the lazy dog\n';
 readText(string);
 endsnippet
 
-#snippet regex
-#import re
-#if re.search(regex, str, re.IGNORECASE|re.DOTALL):
-#endsnippet
+snippet regex
+let regex = /\d+\.\d+/;
+console.log(regex.test('123.394')); //true
+console.log(regex.test('1234'));    //false
+endsnippet
 
 #snippet mongodb
 #from pymongo import MongoClient
