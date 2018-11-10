@@ -1,5 +1,9 @@
 {
     "parser": "babel-eslint",
+    "env": {
+        "amd": true,
+        "node": true
+    },
     "plugins": [
         "react"
     ],
@@ -16,7 +20,7 @@
         "plugin:react/recommended"
     ],
     "rules": {
-        "indent": ["error", 2],
+        "indent": ["error", 4],
         "no-trailing-spaces": "error",
         "no-var": "error",
         "no-multiple-empty-lines": "error",
@@ -31,9 +35,9 @@
         "array-bracket-spacing": "error",
         "comma-spacing": "error",
         "object-curly-spacing": "error",
-        "semi-spacing":"error",
-        "space-in-parens":"error",
-        "space-infix-ops":"error",
+        "semi-spacing": "error",
+        "space-in-parens": "error",
+        "space-infix-ops": "error",
         "brace-style": ["error",
             "1tbs",
             {

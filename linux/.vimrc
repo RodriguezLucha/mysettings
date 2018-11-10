@@ -144,6 +144,7 @@ com! FormatXML %!xmllint --format -
 com! FormatJSON %!jq .
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 noremap <F3> :Autoformat<CR>
+let g:syntastic_javascript_checkers = ['eslint']
 
 "Folding automatically
 set foldmethod=indent
@@ -212,6 +213,7 @@ let g:ycm_semantic_triggers = {
             \ }
 
 let g:jsx_ext_required = 0
+let g:ycm_autoclose_preview_window_after_completion=1
 
 map <leader>gs :Gstatus<CR>
 
