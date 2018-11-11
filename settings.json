@@ -1,0 +1,16 @@
+{
+    "workbench.iconTheme": "vscode-icons",
+    "window.zoomLevel": 1,
+    "editor.fontSize": 14,
+    "editor.fontFamily": "\"DejaVuSansMono Nerd Font\", 'Courier New', monospace",
+    "files.autoSave": "afterDelay",
+    "editor.cursorBlinking": "phase",
+    "editor.cursorWidth": 3,
+    "editor.formatOnType": true,
+    "editor.formatOnSave": true,
+    "breadcrumbs.enabled": true,
+    "window.restoreFullscreen": true,
+    "eslint.autoFixOnSave": true,
+    "eslint.nodePath": "/usr/local/bin/node",
+    "eslint.alwaysShowStatus": true
+}
