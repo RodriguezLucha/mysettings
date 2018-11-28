@@ -1,2 +1,2 @@
-# Linix shell settings 
-Ubuntu, OSX, WSL, Cygwin
+# system settings 
+Misc system settings
