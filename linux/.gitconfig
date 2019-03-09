@@ -20,12 +20,20 @@
     ir10 = rebase -i HEAD~10
     d = difftool
 [user]
-    name = rudy
-    email = RodriguezLucha@gmail.com
+	name = Rudy
+	email = RodriguezLucha@gmail.com
 [diff]
     tool = vimdiff
 
 [push]
     default = simple
 [core]
-    excludesfile = ~/.gitignore_global
+	excludesfile = /Users/rudy/.gitignore_global
+[color]
+	ui = true
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true

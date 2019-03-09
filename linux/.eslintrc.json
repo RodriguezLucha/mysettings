@@ -2,7 +2,10 @@
     "parser": "babel-eslint",
     "env": {
         "amd": true,
-        "node": true
+        "node": true,
+        "browser": true,
+        "jquery": true,
+        "mocha":true
     },
     "plugins": [
         "react"
@@ -20,7 +23,7 @@
         "plugin:react/recommended"
     ],
     "rules": {
-        "indent": ["error", 4],
+        "indent": ["error", 2],
         "no-trailing-spaces": "error",
         "no-var": "error",
         "no-multiple-empty-lines": "error",
@@ -29,6 +32,7 @@
         "quotes": ["error", "single"],
         "semi": "error",
         "quote-props": ["error", "as-needed"],
+         "react/prop-types": 0,
         "arrow-body-style": "error",
         "prefer-arrow-callback": "error",
         "prefer-template": "error",
@@ -43,11 +47,6 @@
             {
                 "allowSingleLine": true
             }
-        ],
-        "sort-imports": ["error", {
-            "ignoreCase": false,
-            "ignoreMemberSort": false,
-            "memberSyntaxSortOrder": ["none", "all", "multiple", "single"]
-        }]
+        ]
     }
 }

@@ -237,3 +237,5 @@ nnoremap <leader>S :if exists("g:syntax_on")    <Bar>
 
 autocmd FileType markdown setlocal spell
 autocmd FileType gitcommit setlocal spell
+let g:NERDTreeNodeDelimiter = "\u00a0"
+set clipboard=unnamed
