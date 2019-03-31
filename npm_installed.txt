@@ -1,0 +1,9 @@
+/Users/rudy/.nvm/versions/node/v10.13.0/lib
+├── babel-eslint@10.0.1
+├── eslint@5.10.0
+├── eslint-plugin-react@7.11.1
+├── jshint@2.10.1
+├── npm@6.4.1
+├── webpack@4.29.3
+└── webpack-cli@3.2.3
+
