@@ -8,7 +8,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
-Plugin 'altercation/vim-colors-solarized'
+Plugin 'morhetz/gruvbox'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-surround'
@@ -115,7 +115,7 @@ autocmd ColorScheme * hi clear SpellBad
 
 set background=dark
 let g:solarized_diffmode="high"
-colorscheme solarized
+colorscheme gruvbox
 highlight Normal ctermbg=NONE
 
 "Easy grep settings
@@ -132,7 +132,7 @@ set laststatus=2
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 0
 let g:airline#extensions#tabline#formatter = 'unique_tail'
-let g:airline_theme='solarized'
+let g:airline_theme='wombat'
 let g:airline_solarized_bg='dark'
 let g:airline_section_c = '%t'
 
