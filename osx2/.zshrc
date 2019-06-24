@@ -18,6 +18,7 @@ rails
 autojump
 ruby
 bundler
+react-native
 )
 
 source $ZSH/oh-my-zsh.sh

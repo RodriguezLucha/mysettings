@@ -79,3 +79,5 @@ yarn-debug.log*
 **/tmp/**
 **/development.log
 **/test.log
+chromedriver.log
+**/tests_output/**
