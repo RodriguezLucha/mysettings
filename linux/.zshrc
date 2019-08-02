@@ -1,7 +1,7 @@
 PATH=~/.local/bin:$PATH
 export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH"
 PATH=~/.rbenv/shims:$PATH
-export ZSH=/Users/rudy/.oh-my-zsh
+
 eval "$(rbenv init -)"
 
 ZSH_THEME="powerlevel9k/powerlevel9k"
@@ -32,7 +32,8 @@ alias l="gls --color --classify --hide='*.pyc' --hide='__pycache__'"
 alias ls="gls --color --classify --hide='*.pyc' --hide='__pycache__'"
 alias root="sudo su -m root"
 alias nethogs=/usr/local/Cellar/nethogs/0.8.5/sbin/nethogs
-alias automocha="npx mocha --watch"
+#alias automocha="npx mocha --watch"
+#alias automocha="nodemon -x 'clear && timeout 2s mocha --require @babel/register'"
 
 #React related
 alias ird="npm install axios jwt-decode react-redux react-router-dom redux redux-logger redux-thunk eslint-plugin-react"
@@ -48,11 +49,11 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-if [ "$TERM_PROGRAM" != "vscode" ]; then
-    if [[ $EUID -ne 0 ]]; then
-        [ -z "$TMUX"  ] && { tmux attach || exec tmux new-session && exit;}
-    fi
-fi
+#if [ "$TERM_PROGRAM" != "vscode" ]; then
+    #if [[ $EUID -ne 0 ]]; then
+        #[ -z "$TMUX"  ] && { tmux attach || exec tmux new-session && exit;}
+    #fi
+#fi
 
 source ~/perl5/perlbrew/etc/bashrc
 
