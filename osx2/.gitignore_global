@@ -12,6 +12,7 @@ node_modules
 build
 npm-debug.log
 .env
+.vscode
 .nyc_output
 coverage
 Gemfile.lock

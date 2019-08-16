@@ -20,8 +20,8 @@
     ir10 = rebase -i HEAD~10
     d = difftool
 [user]
-	name = Rudy
-	email = RodriguezLucha@gmail.com
+	name = Rudy Rodriguez Lucha
+	email = rodriguezlucha@gmail.com
 [diff]
     tool = vimdiff
 

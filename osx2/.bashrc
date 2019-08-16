@@ -1,1 +1,2 @@
-export EDITOR="code --wait"
+export PATH="$HOME/.rbenv/shims:$PATH"
+
