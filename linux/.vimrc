@@ -30,7 +30,7 @@ Plugin 'peterrincker/vim-argumentative'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-fugitive'
 Plugin 'majutsushi/tagbar'
-Plugin 'ludovicchabant/vim-gutentags'
+"Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'breuckelen/vim-resize'
 Plugin 'mhinz/vim-hugefile'
 Plugin 'rhlobo/vim-super-retab'
@@ -62,9 +62,9 @@ Plugin 'bkad/camelcasemotion'
 Plugin 'wellle/targets.vim'
 Plugin '907th/vim-auto-save'
 
-if all_the_plugins == '1'
-    Plugin 'davidhalter/jedi-vim'
-endif
+"if all_the_plugins == '1'
+    "Plugin 'davidhalter/jedi-vim'
+"endif
 
 call vundle#end()
 filetype plugin indent on
@@ -72,7 +72,7 @@ filetype plugin indent on
 set encoding=utf-8
 set noeb vb t_vb=
 set number
-set relativenumber
+"set relativenumber
 set nowrap
 set tabstop=4
 set shiftwidth=4
